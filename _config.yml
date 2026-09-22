@@ -4,11 +4,15 @@ course_name: "Project in Computer Vision"
 term: "Fall 2026"
 university: "UC Irvine"
 title: "CS 117 Fall 2026"
-description: "CS 117: Project in Computer Vision, UC Irvine, Fall 2026."
+description: "CS 117: Project in Computer Vision, UC Irvine, Fall 2026. A project-based introduction to computer vision, from image filtering and local features to deep networks, transformers, and vision-language models."
 
 lecture_days: "Mon/Wed"
-lecture_time: "TODO"
-lecture_location: "TODO"
+lecture_time: "3:30–4:50pm"
+lecture_location: "SH 174"
+
+# Late work is accepted without penalty for this many days after the due
+# date, unless an assignment sets late_until in _data/assignments.yml.
+grace_days: 2
 
 # Leave a link empty ("") until it exists; the site shows "coming soon" instead
 ed_discussion: ""

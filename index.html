@@ -5,8 +5,8 @@ title: "Home"
 
 <section class="card" aria-labelledby="overview">
   <h2 id="overview">Overview</h2>
-  <!-- TODO: course description from the syllabus proposal -->
-  <p>TODO: short course description.</p>
+  <p>CS 117 is a project-based introduction to computer vision: how machines acquire, process, and interpret images and video. We start from image formation, filtering, and local features, then build to the deep learning methods behind modern vision systems, including convolutional networks, vision transformers, and vision-language models.</p>
+  <p>Three problem sets build the skills step by step, and the quarter ends with a team <a href="{{ '/project/' | relative_url }}">final project</a> that asks and answers your own question using open-source vision models.</p>
 
   <dl class="facts">
     <dt>Lecture</dt>
@@ -15,12 +15,16 @@ title: "Home"
     <dd>{{ site.lecture_location }}</dd>
     <dt>Dates</dt>
     <dd>Mon, Sep 28 – Wed, Dec 2 (no class Wed, Nov 11)</dd>
+    <dt>Midterm</dt>
+    <dd>Wed, Nov 4, in class</dd>
+    <dt>Final</dt>
+    <dd>No final exam. The final project video is due Mon, Dec 7.</dd>
   </dl>
 </section>
 
 <section class="card" aria-labelledby="links">
   <h2 id="links">Important Links</h2>
-  {% assign links = "ed_discussion|Ed Discussion|Your first stop for questions and announcements.,canvas|Canvas|Grades and course announcements.,gradescope|Gradescope|Submit problem sets and project deliverables.,slides|Lecture slides|Posted before each lecture." | split: "," %}
+  {% assign links = "ed_discussion|Ed Discussion|Your first stop for questions and announcements.,canvas|Canvas|Grades, lecture slides and readings.,gradescope|Gradescope|Submit problem sets and project deliverables." | split: "," %}
   <ul>
     {% for l in links %}
       {% assign parts = l | split: "|" %}
@@ -35,9 +39,7 @@ title: "Home"
 
 <section class="card" aria-labelledby="staff">
   <h2 id="staff">Course Staff</h2>
-  {% if site.staff_email and site.staff_email != "" %}
-  <p>For personal matters, email the course staff at <a href="mailto:{{ site.staff_email }}">{{ site.staff_email }}</a>. Everything else goes on Ed Discussion.</p>
-  {% endif %}
+  <p>Post course questions on Ed Discussion, where the whole course staff can answer them. For private matters, such as grades or personal circumstances, email the course staff from your UCI email address{% if site.staff_email and site.staff_email != "" %} at <a href="mailto:{{ site.staff_email }}">{{ site.staff_email }}</a>{% endif %}.</p>
   <ul class="staff-list">
     {% for person in site.data.staff %}
     <li class="staff-card">

@@ -1,33 +1,33 @@
 week	date	topic	readings	type	notes
 1		Week 1		subheading	
-1	2026-09-28	TODO: topic			
-1	2026-09-30	TODO: topic			
+1	2026-09-28	Introduction	S 1.1–1.3; FCV 1–3		
+1	2026-09-30	Linear Filters	S 3.2–3.3; FCV 17		Image Formation lecture recording posted today; watch before Oct 7
 2		Week 2		subheading	
-2	2026-10-05	TODO: topic			
-2	2026-10-07	TODO: topic			
+2	2026-10-05	Gradients and Edges	S 7.2; FCV 18		
+2	2026-10-07	Project Lab 1: What is out there?<br>Video: Image Formation (color, pinhole camera)	S 2.2–2.3; FCV 5, 8	lab	TA-led in class. Image Formation video posted Sep 30
 3		Week 3		subheading	
-3	2026-10-12	TODO: topic			
-3	2026-10-14	TODO: topic			
+3	2026-10-12	Project Lab 2: Team formation<br>Video: Intro to Learning	S 5.1; FCV 9	lab	TA-led in class
+3	2026-10-14	Local Invariant Features and Matching	S 7.1		
 4		Week 4		subheading	
-4	2026-10-19	TODO: topic			
-4	2026-10-21	TODO: topic			
+4	2026-10-19	Gradient-Based Learning	FCV 10		
+4	2026-10-21	Neural Networks and Backpropagation	S 5.3; FCV 12, 14; <a href='https://cs231n.github.io/optimization-2/'>CS231n backprop notes</a>		
 5		Week 5		subheading	
-5	2026-10-26	TODO: topic			
-5	2026-10-28	TODO: topic			
+5	2026-10-26	Convolutional Neural Networks + final project directions preview	S 5.4; FCV 24; <a href='https://cs231n.github.io/convolutional-networks/'>CS231n ConvNet notes</a>		
+5	2026-10-28	Transfer Learning and Fine-Tuning	FCV 24, 36.2		
 6		Week 6		subheading	
-6	2026-11-02	TODO: topic			
-6	2026-11-04	TODO: topic			
+6	2026-11-02	Training Deep Networks: Data and Robustness			
+6	2026-11-04	Midterm Exam (in class, on paper)		exam	
 7		Week 7		subheading	
-7	2026-11-09	TODO: topic			
+7	2026-11-09	Segmentation and Detection			Final project presentation format announced
 7	2026-11-11	Veterans Day		cancelled	
 8		Week 8		subheading	
-8	2026-11-16	TODO: topic			
-8	2026-11-18	TODO: topic			
+8	2026-11-16	Vision Transformers	FCV 26		
+8	2026-11-18	CLIP and Vision-Language Models + project check-in discussion			
 9		Week 9		subheading	
-9	2026-11-23	TODO: topic			
-9	2026-11-25	TODO: topic			
+9	2026-11-23	Generative Models	FCV 32		
+9	2026-11-25	Optional virtual office hours: project discussion		optional	Thanksgiving week. Nothing graded; missing it costs nothing
 10		Week 10		subheading	
-10	2026-11-30	TODO: topic			
-10	2026-12-02	TODO: topic			
+10	2026-11-30	Project Presentations			
+10	2026-12-02	Project Presentations			
 11		Finals Week		subheading	
-11	2026-12-07	Finals week: no lecture		finals	TODO: final project deliverables
+11	2026-12-07	No final exam		finals	

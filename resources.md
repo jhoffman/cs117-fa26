@@ -7,8 +7,8 @@ title: "Resources"
 <section class="card" markdown="1">
 ## Textbooks
 
-* Computer Vision: Algorithms and Applications, by Rick Szeliski. A [free electronic copy](https://szeliski.org/Book/) is available online. 
-* Foundations of Computer Vision, by Antonio Torralba, Phillip Isola, and William Freeman. Both [electronic copy](https://visionbook.mit.edu/) and a [physical book](https://mitpress.mit.edu/9780262048972/foundations-of-computer-vision/) are available. 
+* Computer Vision: Algorithms and Applications, 2nd ed., by Richard Szeliski. The primary text. A [free electronic copy](https://szeliski.org/Book/) is available online. 
+* Foundations of Computer Vision, by Antonio Torralba, Phillip Isola, and William Freeman. Supplementary. Both [electronic copy](https://visionbook.mit.edu/) and a [physical book](https://mitpress.mit.edu/9780262048972/foundations-of-computer-vision/) are available. 
 * Some background reading on object recognition is from Kristen Grauman and Bastian Leibe's short book on [Visual Object Recognition](https://www.morganclaypool.com/doi/abs/10.2200/S00332ED1V01Y201103AIM011).
 </section>
 

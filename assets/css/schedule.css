@@ -129,3 +129,15 @@
     white-space: normal;
   }
 }
+
+.data-table .exam > * {
+  background: var(--color-exam);
+}
+
+.data-table .exam:hover > * {
+  background: var(--color-exam);
+}
+
+.data-table .exam .tag-exam {
+  background-color: var(--color-bg);
+}

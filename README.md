@@ -15,7 +15,9 @@ Plain Jekyll 4 with no theme; styles are ported from the homepage
 | Policies and grading | `syllabus.md` |
 | Project instructions | `project.html` |
 
-An assignment moves from Upcoming to Past the day after it is due. The deploy workflow rebuilds the site every day, so this happens without a push.
+Late work is accepted for `grace_days` (2) days after the due date, set in `_config.yml`. The last accepted day is calculated and shown on every assignment. To give one assignment a different window, set `late_until: YYYY-MM-DD` on it in `assignments.yml`; use `late_until: "none"` for in-class work.
+
+An assignment moves from Upcoming to Past once its last accepted day is over. The deploy workflow rebuilds the site every day, so this happens without a push.
 
 ## Local preview
 

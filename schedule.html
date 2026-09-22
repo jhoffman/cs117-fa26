@@ -11,6 +11,8 @@ title: "Schedule"
 {% assign dated = site.data.schedule | where_exp: "r", "r.date != nil" %}
 
 <p class="note">This schedule is tentative and may change. Changes will be announced on Ed Discussion.</p>
+
+<p>Readings: <strong>S</strong> is <cite>Computer Vision: Algorithms and Applications</cite>, 2nd ed., by Richard Szeliski. <strong>FCV</strong> is <cite>Foundations of Computer Vision</cite>, by Torralba, Isola, and Freeman. Both are free online; see <a href="{{ '/resources/' | relative_url }}">Resources</a>.</p>
 {% if site.slides and site.slides != "" %}
 <p>Slides are posted before each lecture in the <a href="{{ site.slides }}">slides folder</a>.</p>
 {% endif %}
@@ -46,7 +48,12 @@ title: "Schedule"
           <tr{% if row.type %} class="{{ row.type }}"{% endif %}>
             <th scope="row">{{ row.date | date: "%a, %b %-d" }}</th>
             <td>
-              {% if row.type == "cancelled" %}<span class="tag tag-cancel">No class</span> {% endif %}
+              {% case row.type %}
+                {% when "cancelled" %}<span class="tag tag-cancel">No class</span>
+                {% when "exam" %}<span class="tag tag-exam">Exam</span>
+                {% when "lab" %}<span class="tag tag-lab">Lab</span>
+                {% when "optional" %}<span class="tag tag-optional">Optional</span>
+              {% endcase %}
               {{ row.topic }}
               {% if row.notes %}<br><span class="muted">{{ row.notes }}</span>{% endif %}
             </td>

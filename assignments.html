@@ -3,19 +3,21 @@ layout: default
 title: "Assignments"
 ---
 {% comment %}
-  Built from _data/assignments.yml. An item counts as past from the day after
-  its due date; the deploy workflow rebuilds daily so this stays current.
+  Built from _data/assignments.yml. An item counts as past once its last accepted
+  day (due date plus grace period) is over; the deploy workflow rebuilds daily
+  so this stays current.
 {% endcomment %}
 {% assign today = site.time | date: "%Y-%m-%d" %}
 {% assign sorted = site.data.assignments | sort: "due" %}
 {% assign upcoming = "" | split: "" %}
 {% assign past = "" | split: "" %}
 {% for a in sorted %}
-  {% assign d = a.due | date: "%Y-%m-%d" %}
+  {% include accepted-until.html item=a %}
+  {% if accepted_until == "none" %}{% assign d = a.due | date: "%Y-%m-%d" %}{% else %}{% assign d = accepted_until %}{% endif %}
   {% if d >= today %}{% assign upcoming = upcoming | push: a %}{% else %}{% assign past = past | push: a %}{% endif %}
 {% endfor %}
 
-<p>Problem sets and project deliverables are submitted on Gradescope unless the handout says otherwise. Deadlines are Pacific time. See the <a href="{{ '/syllabus/' | relative_url }}#late-policy">late policy</a>, and the <a href="{{ '/project/' | relative_url }}">Project page</a> for details on each project milestone.</p>
+<p>Problem sets and project deliverables are submitted on Gradescope unless the handout says otherwise. Deadlines are Pacific time. Late work is accepted without penalty through the "Accepted until" date, and nothing is graded after it; see the <a href="{{ '/syllabus/' | relative_url }}#late-policy">late policy</a>. Details on each project milestone are on the <a href="{{ '/project/' | relative_url }}">Project page</a>.</p>
 
 {% assign groups = "upcoming|Upcoming,past|Past" | split: "," %}
 {% for g in groups %}
@@ -35,6 +37,7 @@ title: "Assignments"
         <th scope="col">Type</th>
         <th scope="col">Released</th>
         <th scope="col">Due</th>
+        <th scope="col">Accepted until</th>
         <th scope="col">Handout</th>
       </tr>
     </thead>
@@ -42,10 +45,12 @@ title: "Assignments"
       {% for a in list %}
       <tr>
         <th scope="row">{{ a.title }}{% if a.notes != "" and a.notes %}<br><span class="muted">{{ a.notes }}</span>{% endif %}</th>
-        <td>{% if a.type == "ps" %}<span class="tag tag-ps">Problem set</span>{% else %}<span class="tag tag-project">Project</span>{% endif %}</td>
-        <td>{% if a.release %}{{ a.release | date: "%a, %b %-d" }}{% else %}<span class="muted">n/a</span>{% endif %}</td>
+        <td>{% case a.type %}{% when "ps" %}<span class="tag tag-ps">Problem set</span>{% when "participation" %}<span class="tag tag-participation">Participation</span>{% else %}<span class="tag tag-project">Project</span>{% endcase %}</td>
+        <td>{% if a.release %}{{ a.release | date: "%a, %b %-d" }}{% elsif a.type == "participation" %}Available now{% else %}<span class="muted">n/a</span>{% endif %}</td>
         <td>{{ a.due | date: "%a, %b %-d" }}{% if a.due_time %}, {{ a.due_time }}{% endif %}</td>
-        <td>{% if a.link and a.link != "" %}<a href="{{ a.link | relative_url }}">{{ a.title }} handout</a>{% else %}<span class="muted">Not yet released</span>{% endif %}</td>
+        {% include accepted-until.html item=a %}
+        <td>{% if accepted_until == "none" %}<span class="muted">No late submissions</span>{% else %}{{ accepted_until | date: "%a, %b %-d" }}{% endif %}</td>
+        <td>{% if a.link and a.link != "" %}<a href="{{ a.link | relative_url }}">{{ a.title }} handout</a>{% elsif a.type == "participation" %}<span class="muted">Link coming soon</span>{% else %}<span class="muted">Not yet released</span>{% endif %}</td>
       </tr>
       {% endfor %}
     </tbody>

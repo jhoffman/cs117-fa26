@@ -28,6 +28,7 @@
   --color-due:    #fff3bf;
   --color-out:    #e0f2fd;
   --color-cancel: #fde2e4;
+  --color-exam:   #e6f4ea;
 
   /* Typography */
   --font-sans: "Source Sans 3", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
@@ -258,8 +259,12 @@ button:focus-visible {
 .tag-due    { background-color: var(--color-due); }
 .tag-out    { background-color: var(--color-out); }
 .tag-cancel { background-color: var(--color-bg); }
+.tag-exam   { background-color: var(--color-exam); }
+.tag-lab    { background-color: var(--color-out); }
+.tag-optional { background-color: var(--color-surface-hover); }
 .tag-ps     { background-color: var(--color-surface-hover); }
 .tag-project { background-color: var(--color-accent-light); }
+.tag-participation { background-color: var(--color-due); }
 
 /* Callout: an accent rule, as on the homepage's research statement */
 .note {
@@ -301,5 +306,45 @@ footer p {
   *::after {
     transition: none !important;
     animation: none !important;
+  }
+}
+
+/* Markdown tables inside cards (grading breakdowns) */
+.card table:not(.data-table) {
+  border-collapse: collapse;
+  margin: var(--spacing-md) 0;
+  background: var(--color-bg);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.card table:not(.data-table) th,
+.card table:not(.data-table) td {
+  padding: var(--spacing-sm) var(--spacing-md);
+  text-align: left;
+  border-bottom: 1px solid #e3e7ea;
+}
+
+.card table:not(.data-table) thead th {
+  background: var(--color-primary);
+  color: #ffffff;
+  font-weight: 600;
+}
+
+/* On-page contents for long pages */
+.toc p {
+  margin: 0;
+  line-height: 1.9;
+}
+
+@media (max-width: 600px) {
+  .card table:not(.data-table) th,
+  .card table:not(.data-table) td {
+    padding: var(--spacing-sm);
+  }
+
+  .card table:not(.data-table) code {
+    word-break: break-all;
   }
 }

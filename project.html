@@ -2,25 +2,28 @@
 layout: default
 title: "Final Project"
 ---
-{% assign milestones = site.data.assignments | where: "type", "project" | sort: "due" %}
+{% assign milestones = site.data.assignments | where_exp: "a", "a.type == 'project' or a.project" | sort: "due" %}
 
 <section class="card" aria-labelledby="project-overview">
   <h2 id="project-overview">Overview</h2>
-  <!-- TODO: project description from the syllabus proposal -->
-  <p>TODO: what the project is, what a strong project looks like, and how it builds on the problem sets.</p>
+  <p>In teams of 3–4, you will ask an empirical question about a computer vision model and answer it with evidence. You'll start from open-source code, and the course provides no base code: working with a real repository is part of the skill.</p>
+  <p>The one rule that shapes everything else: <strong>frame your project as a question with a measurable answer, not as "build X."</strong> "Build a self-driving car" fails. "Does this detector degrade more on night images than on rain images?" can be answered well with 40 photographs. Any topic can host a good question, and one rubric grades the evidence regardless of topic. Proposals phrased as a build will be sent back with one instruction: turn this into a question.</p>
+  <p>The final project counts for 35% of your course grade. It is the course's final-week activity, and there is no final exam.</p>
 </section>
 
 <section class="card" aria-labelledby="milestones">
   <h2 id="milestones">Milestones</h2>
-  <p>All dates are also on the <a href="{{ '/schedule/' | relative_url }}">Schedule</a> and <a href="{{ '/assignments/' | relative_url }}">Assignments</a> pages.</p>
+  <p>All dates are also on the <a href="{{ '/schedule/' | relative_url }}">Schedule</a> and <a href="{{ '/assignments/' | relative_url }}">Assignments</a> pages. Late work is accepted through the "Accepted until" date and not graded after it.</p>
   <div class="table-scroll" role="region" aria-label="Milestones table" tabindex="0">
     <table class="data-table">
-      <caption class="visually-hidden">Project milestones and due dates</caption>
+      <caption class="visually-hidden">Project milestones, due dates, and weights</caption>
       <thead>
         <tr>
           <th scope="col">Milestone</th>
           <th scope="col">Due</th>
-          <th scope="col">Details</th>
+          <th scope="col">Accepted until</th>
+          <th scope="col">Weight</th>
+          <th scope="col">Instructions</th>
         </tr>
       </thead>
       <tbody>
@@ -28,29 +31,103 @@ title: "Final Project"
         <tr>
           <th scope="row">{{ m.title }}</th>
           <td>{{ m.due | date: "%a, %b %-d" }}{% if m.due_time %}, {{ m.due_time }}{% endif %}</td>
-          <td>{% if m.link and m.link != "" %}<a href="{{ m.link | relative_url }}">{{ m.title }} instructions</a>{% else %}<span class="muted">Instructions coming soon</span>{% endif %}</td>
+          {% include accepted-until.html item=m %}
+          <td>{% if accepted_until == "none" %}<span class="muted">No late submissions</span>{% else %}{{ accepted_until | date: "%a, %b %-d" }}{% endif %}</td>
+          <td>{{ m.weight }}</td>
+          <td>{% if m.link and m.link != "" %}<a href="{{ m.link | relative_url }}">{{ m.title }} instructions</a>{% else %}<span class="muted">Coming soon</span>{% endif %}</td>
         </tr>
         {% endfor %}
       </tbody>
     </table>
   </div>
+  <p class="muted">Percentages are shares of the final project grade. The seed and roster count toward your participation grade instead.</p>
 </section>
 
-<section class="card" aria-labelledby="teams">
-  <h2 id="teams">Teams</h2>
-  <p>TODO: team size, how teams are formed, and expectations for dividing work.</p>
+<section class="card" aria-labelledby="phases">
+  <h2 id="phases">What Each Milestone Requires</h2>
+
+  <h3>Project Lab 1 and the project seed (Oct 7, seed due Oct 11, participation)</h3>
+  <p>In the first lab you'll watch several modern models succeed and fail, predicting what happens before each demo. You leave with a <strong>project seed</strong>: a domain you care about, five images you could get from it, and a prediction of where a model would work and where it would fail.</p>
+
+  <h3>Project Lab 2 and team roster (Oct 12, roster due Oct 16, participation)</h3>
+  <p>Pitch your seed in 60 seconds to rotating small groups, then form teams of 3–4 (the exact size is set in week 1, once enrollment settles). Anyone still without a team on Oct 16 goes on the unmatched list, and the TA places them on teams on Oct 19.</p>
+
+  <h3>Proposal + smoke test (Oct 28)</h3>
+  <p>Keep it to one page:</p>
+  <ul>
+    <li>The question</li>
+    <li>Your archetype (below)</li>
+    <li>The repository you'll start from</li>
+    <li>A data plan</li>
+    <li>A baseline plan</li>
+    <li>A fallback, if you chose archetype 6</li>
+  </ul>
+  <p>Include the <strong>smoke test</strong>: the actual console output of the repository's own demo or evaluation running on your setup. Paste the output itself, not a plan to run it. If a repository won't run within a few hours, pick a different one. Learning that in week 5 costs nothing; learning it in week 9 costs the project.</p>
+
+  <h3>Check-in (Nov 18, before class)</h3>
+  <p>Your check-in must include <strong>a baseline number</strong>. A baseline is a simple method with a measured result: random guessing, nearest neighbour, zero-shot CLIP, or the repository's off-the-shelf output. It guarantees you have something to report even if the ambitious part doesn't work. It is also the only way a later result means anything: 87% accuracy is uninterpretable until you know guessing gets 70%. Also include your revised scope and what's blocking you. A team that arrives without a baseline number will have its scope cut down to something achievable. That's a rescue, not a penalty.</p>
+
+  <h3>Presentation (Nov 30 or Dec 2)</h3>
+  <p>The format (full talks, lightning talks, or a mix) will be announced on Nov 9, once enrollment is known.</p>
+
+  <h3>Video + code (Dec 7)</h3>
+  <p>Submit all of the following:</p>
+  <ul>
+    <li>A <strong>4–5 minute video</strong> in a fixed order: question, baseline, what you did, result, limitation.</li>
+    <li>A <strong>GitHub fork</strong> of the repository you started from, submitted as a URL.</li>
+    <li>A <strong><code>CONTRIBUTION.md</code></strong> file listing every file your team wrote or changed, with one line on why.</li>
+    <li>Your results.</li>
+  </ul>
 </section>
 
-<section class="card" aria-labelledby="deliverables">
-  <h2 id="deliverables">Deliverables</h2>
-  <!-- One h3 per milestone; keep titles in sync with _data/assignments.yml -->
-  {% for m in milestones %}
-  <h3>{{ m.title }}</h3>
-  <p>TODO: what to submit, format and length.</p>
-  {% endfor %}
+<section class="card" aria-labelledby="archetypes">
+  <h2 id="archetypes">Six Project Archetypes</h2>
+  <p>Pick one of these shapes. Follow the shape and you will have results by Dec 7. Archetypes 1–5 rely mostly on running existing models rather than training new ones, which is what makes them work on free Colab.</p>
+  <div class="table-scroll" role="region" aria-label="Project archetypes table" tabindex="0">
+    <table class="data-table">
+      <caption class="visually-hidden">Project archetypes, what each produces, and its risk</caption>
+      <thead>
+        <tr>
+          <th scope="col">Archetype</th>
+          <th scope="col">What you produce</th>
+          <th scope="col">Risk</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">1. Reproduce and stress-test</th><td>Reproduce one reported number from an open-source model, then break it on out-of-distribution data you collect. You produce the reproduction plus a robustness curve.</td><td>Lowest</td></tr>
+        <tr><th scope="row">2. Head-to-head under a fixed budget</th><td>Compare 2–3 open-source models on the same task, data, and compute. You produce a comparison table and a recommendation you defend.</td><td>Low</td></tr>
+        <tr><th scope="row">3. Domain transfer</th><td>Apply a model trained for one domain to a domain you care about, measure the drop, then try to close it. You produce before/after results and a gap analysis.</td><td>Low</td></tr>
+        <tr><th scope="row">4. Ablation / mechanism probe</th><td>Systematically remove or change parts of one model to find what matters. You produce an ablation table and an explanation.</td><td>Low</td></tr>
+        <tr><th scope="row">5. Failure taxonomy</th><td>Collect inputs where a model fails, sort the failures into categories, and test hypotheses about their causes. You produce the taxonomy with evidence for each category. No training needed.</td><td>Low</td></tr>
+        <tr><th scope="row">6. Build something new</th><td>Build a working system, plus its evaluation.</td><td>High: your proposal must name a fallback from archetypes 1–5 using the same repository and data</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>The course never covers multi-view geometry (homographies, calibration, stereo, structure from motion). You may still propose a project on it, but you'll be learning that material on your own.</p>
+</section>
+
+<section class="card" aria-labelledby="repos">
+  <h2 id="repos">Choosing a Starting Repository</h2>
+  <p>A vetted list of starting points, each confirmed to install and run on free Colab this quarter, will be posted with the project handout on Oct 21. You may go off the list if your repository meets the same bar:</p>
+  <ul>
+    <li>The README has a working install and a runnable demo or evaluation command.</li>
+    <li>It had a commit in the last ~2 years, or it's a maintained library such as <code>torchvision</code>, <code>timm</code>, or Hugging Face.</li>
+    <li>It's an official implementation, or it has a few hundred or more stars.</li>
+    <li>Pretrained weights are downloadable. Avoid anything that says "train for 8 GPU-days".</li>
+    <li>It runs on one GPU, meaning free Colab.</li>
+  </ul>
 </section>
 
 <section class="card" aria-labelledby="project-grading">
-  <h2 id="project-grading">Grading</h2>
-  <p>TODO: rubric and weight of each milestone.</p>
+  <h2 id="project-grading">Grading Rubric</h2>
+  <p>One rubric covers every project, so an ambitious topic is never graded as "harder" than a modest one. The rubric grades the evidence you show. Each dimension is scored 0, 1, or 2:</p>
+  <ol>
+    <li><strong>There is a question</strong>, stated precisely enough to be answerable.</li>
+    <li><strong>There is a baseline</strong> with a number, and it's the right baseline.</li>
+    <li><strong>There is a comparison or a curve</strong>, not a single number.</li>
+    <li><strong>The evaluation is honest</strong>: held-out data, no tuning on test data, limitations stated.</li>
+    <li><strong>The conclusion follows from the evidence shown</strong>, and goes no further.</li>
+    <li><strong>Your contribution is clearly separated</strong> from what the repository already did. This is checked against your fork's diff and your <code>CONTRIBUTION.md</code>.</li>
+    <li><strong>It's reproducible</strong>: someone could re-run it from what you submitted.</li>
+  </ol>
 </section>
