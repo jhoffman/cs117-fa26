@@ -24,16 +24,10 @@ title: "Home"
 
 <section class="card" aria-labelledby="links">
   <h2 id="links">Important Links</h2>
-  {% assign links = "ed_discussion|Ed Discussion|Your first stop for questions and announcements.,canvas|Canvas|Grades, lecture slides and readings.,gradescope|Gradescope|Submit problem sets and project deliverables." | split: "," %}
   <ul>
-    {% for l in links %}
-      {% assign parts = l | split: "|" %}
-      {% assign href = site[parts[0]] %}
-      <li>
-        {% if href and href != "" %}<a href="{{ href }}">{{ parts[1] }}</a>{% else %}<strong>{{ parts[1] }}</strong> <span class="muted">(link coming soon)</span>{% endif %}:
-        {{ parts[2] }}
-      </li>
-    {% endfor %}
+    <li>{% if site.ed_discussion != "" %}<a href="{{ site.ed_discussion }}">Ed Discussion</a>{% else %}<strong>Ed Discussion</strong> <span class="muted">(link coming soon)</span>{% endif %}: your first stop for questions and announcements.</li>
+    <li>{% if site.canvas != "" %}<a href="{{ site.canvas }}">Canvas</a>{% else %}<strong>Canvas</strong> <span class="muted">(link coming soon)</span>{% endif %}: grades, lecture slides and readings.</li>
+    <li>{% if site.gradescope != "" %}<a href="{{ site.gradescope }}">Gradescope</a>{% else %}<strong>Gradescope</strong> <span class="muted">(link coming soon)</span>{% endif %}: submit problem sets and project deliverables.</li>
   </ul>
 </section>
 
