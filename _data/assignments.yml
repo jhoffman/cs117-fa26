@@ -1,0 +1,57 @@
+# One entry per problem set or project milestone. Drives the Assignments
+# page, the Project page's milestone table, and the "Out"/"Due" labels on
+# the Schedule. Dates are YYYY-MM-DD; items move from Upcoming to Past the
+# day after they are due.
+#
+#   type: ps | project
+#   link: handout URL (Canvas, Gradescope, or a file in this repo); "" if not released
+#
+# TODO: all dates below are placeholders.
+
+- title: "Problem Set 1"
+  type: ps
+  release: 2026-09-30
+  due: 2026-10-09
+  due_time: "11:59pm"
+  link: ""
+  notes: ""
+
+- title: "Problem Set 2"
+  type: ps
+  release: 2026-10-12
+  due: 2026-10-23
+  due_time: "11:59pm"
+  link: ""
+  notes: ""
+
+- title: "Project Proposal"
+  type: project
+  release: 2026-10-14
+  due: 2026-10-30
+  due_time: "11:59pm"
+  link: ""
+  notes: "Team of TODO students"
+
+- title: "Project Progress Report"
+  type: project
+  release:
+  due: 2026-11-13
+  due_time: "11:59pm"
+  link: ""
+  notes: ""
+
+- title: "Project Presentations"
+  type: project
+  release:
+  due: 2026-12-02
+  due_time: "in class"
+  link: ""
+  notes: ""
+
+- title: "Final Project Report"
+  type: project
+  release:
+  due: 2026-12-09
+  due_time: "11:59pm"
+  link: ""
+  notes: ""

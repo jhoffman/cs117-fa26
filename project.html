@@ -1,0 +1,56 @@
+---
+layout: default
+title: "Final Project"
+---
+{% assign milestones = site.data.assignments | where: "type", "project" | sort: "due" %}
+
+<section class="card" aria-labelledby="project-overview">
+  <h2 id="project-overview">Overview</h2>
+  <!-- TODO: project description from the syllabus proposal -->
+  <p>TODO: what the project is, what a strong project looks like, and how it builds on the problem sets.</p>
+</section>
+
+<section class="card" aria-labelledby="milestones">
+  <h2 id="milestones">Milestones</h2>
+  <p>All dates are also on the <a href="{{ '/schedule/' | relative_url }}">Schedule</a> and <a href="{{ '/assignments/' | relative_url }}">Assignments</a> pages.</p>
+  <div class="table-scroll" role="region" aria-label="Milestones table" tabindex="0">
+    <table class="data-table">
+      <caption class="visually-hidden">Project milestones and due dates</caption>
+      <thead>
+        <tr>
+          <th scope="col">Milestone</th>
+          <th scope="col">Due</th>
+          <th scope="col">Details</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for m in milestones %}
+        <tr>
+          <th scope="row">{{ m.title }}</th>
+          <td>{{ m.due | date: "%a, %b %-d" }}{% if m.due_time %}, {{ m.due_time }}{% endif %}</td>
+          <td>{% if m.link and m.link != "" %}<a href="{{ m.link | relative_url }}">{{ m.title }} instructions</a>{% else %}<span class="muted">Instructions coming soon</span>{% endif %}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="card" aria-labelledby="teams">
+  <h2 id="teams">Teams</h2>
+  <p>TODO: team size, how teams are formed, and expectations for dividing work.</p>
+</section>
+
+<section class="card" aria-labelledby="deliverables">
+  <h2 id="deliverables">Deliverables</h2>
+  <!-- One h3 per milestone; keep titles in sync with _data/assignments.yml -->
+  {% for m in milestones %}
+  <h3>{{ m.title }}</h3>
+  <p>TODO: what to submit, format and length.</p>
+  {% endfor %}
+</section>
+
+<section class="card" aria-labelledby="project-grading">
+  <h2 id="project-grading">Grading</h2>
+  <p>TODO: rubric and weight of each milestone.</p>
+</section>

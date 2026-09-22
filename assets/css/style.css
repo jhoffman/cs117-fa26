@@ -1,0 +1,305 @@
+/* Course site styles, ported from the homepage (jhoffman.github.io css/style.css).
+   Token names match the homepage so the two can be kept in sync. */
+
+:root {
+  /* Base & Surfaces */
+  --color-bg:            #ffffff;  /* pure white background */
+  --color-surface:       #f7f9fa;  /* very light gray cards/sections */
+  --color-surface-hover: #eceff1;  /* slightly darker surface for hover states */
+
+  /* Text & Primary */
+  --color-primary:    #2e3a59;  /* dark slate – for headings/nav bg */
+  --color-text:       #343a40;  /* charcoal – for body text */
+
+  --color-header-title: #f1f1f1;
+  --color-nav-link:     #CFD8DC;
+
+  /* Accent. --color-accent is for borders, rules and fills only: it is 3.3:1
+     on white, below the 4.5:1 AA minimum for text. Text links use --color-link,
+     which passes on every surface below (5.9:1 on white, 5.1:1 on surface-hover). */
+  --color-accent:       #4a90e2;
+  --color-accent-light: #d0e6fc;
+  --color-link:         #1a64b0;
+
+  /* Muted: darker than the homepage's #6c757d, which is 4.4:1 on --color-surface */
+  --color-muted-text: #5f6b73;
+
+  /* Status tags (text on these fills is --color-primary, >= 8:1) */
+  --color-due:    #fff3bf;
+  --color-out:    #e0f2fd;
+  --color-cancel: #fde2e4;
+
+  /* Typography */
+  --font-sans: "Source Sans 3", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-heading: var(--font-sans);
+
+  /* Spacing */
+  --spacing-mini: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 2rem;
+
+  /* Border radius */
+  --radius: 0.5rem;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 106.25% ~= 17px root, as on the homepage. A percentage keeps the
+   browser's own font-size setting honoured. */
+html {
+  font-size: 106.25%;
+  /* keep anchor targets (#late-policy etc.) clear of the sticky header */
+  scroll-padding-top: 5rem;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+}
+
+main {
+  max-width: 960px;
+  margin: var(--spacing-lg) auto;
+  padding: 0 var(--spacing-md);
+}
+
+/* main is a skip-link target; it takes focus but needs no ring of its own */
+main:focus {
+  outline: none;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-heading);
+  color: var(--color-primary);
+  margin-top: 0;
+  line-height: 1.25;
+  font-weight: 600;
+}
+
+h1 {
+  font-size: clamp(1.5rem, 1.24rem + 1.16vw, 1.9rem);
+  margin-bottom: var(--spacing-md);
+}
+
+h2 {
+  font-size: clamp(1.25rem, 1.03rem + 1.02vw, 1.6rem);
+}
+
+h3 {
+  font-size: clamp(1.1rem, 1.04rem + 0.29vw, 1.2rem);
+}
+
+h4 {
+  font-size: 1rem;
+}
+
+* + h2,
+* + h3,
+* + h4 {
+  margin-top: var(--spacing-lg);
+}
+
+.page-subtitle {
+  margin: calc(-1 * var(--spacing-sm)) 0 var(--spacing-lg);
+  color: var(--color-muted-text);
+  font-size: 1.1rem;
+}
+
+/* Images */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Links. Underlined inside page content so they are not told apart from
+   body text by colour alone (WCAG 1.4.1). */
+a {
+  color: var(--color-link);
+  text-decoration: none;
+}
+
+main a,
+footer a {
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+a:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--color-link);
+  outline-offset: 2px;
+}
+
+/* Skip link: off-screen until focused */
+.skip-link {
+  position: absolute;
+  left: var(--spacing-md);
+  top: -3rem;
+  z-index: 2000;
+  padding: var(--spacing-sm) var(--spacing-md);
+  background: var(--color-bg);
+  color: var(--color-link);
+  font-weight: 600;
+  border-radius: var(--radius);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.skip-link:focus {
+  top: var(--spacing-sm);
+}
+
+/* Cards: same treatment as the homepage's news/publication cards */
+.card {
+  background-color: var(--color-surface);
+  border-radius: var(--radius);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  padding: var(--spacing-md) var(--spacing-lg);
+  margin-bottom: var(--spacing-lg);
+}
+
+.card > :first-child {
+  margin-top: 0;
+}
+
+.card > :last-child {
+  margin-bottom: 0;
+}
+
+/* Key facts at the top of the home page */
+.facts {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: var(--spacing-mini) var(--spacing-md);
+  margin: 0;
+}
+
+.facts dt {
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+.facts dd {
+  margin: 0;
+}
+
+.muted {
+  color: var(--color-muted-text);
+}
+
+/* Course staff: works for one card or several; cards keep a fixed width and
+   centre as a group, so two cards read as a balanced pair. */
+.staff-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--spacing-lg);
+  list-style: none;
+  margin: var(--spacing-md) 0 0;
+  padding: 0;
+}
+
+.staff-card {
+  flex: 0 1 16rem;
+  background-color: var(--color-bg);
+  border-radius: var(--radius);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  padding: var(--spacing-md);
+  text-align: center;
+}
+
+.staff-card img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin: 0 auto var(--spacing-sm);
+}
+
+.staff-card h3 {
+  margin: 0 0 var(--spacing-mini);
+}
+
+.staff-card p {
+  margin: 0 0 var(--spacing-mini);
+}
+
+.staff-role {
+  color: var(--color-muted-text);
+  font-weight: 600;
+}
+
+/* Status tags: always carry a text label, colour is secondary */
+.tag {
+  display: inline-block;
+  padding: 0.05em 0.5em;
+  border-radius: var(--radius);
+  color: var(--color-primary);
+  font-size: 0.85rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.tag-due    { background-color: var(--color-due); }
+.tag-out    { background-color: var(--color-out); }
+.tag-cancel { background-color: var(--color-bg); }
+.tag-ps     { background-color: var(--color-surface-hover); }
+.tag-project { background-color: var(--color-accent-light); }
+
+/* Callout: an accent rule, as on the homepage's research statement */
+.note {
+  margin: 0 0 var(--spacing-md);
+  padding-left: var(--spacing-md);
+  border-left: 3px solid var(--color-accent);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: var(--spacing-md);
+  background-color: var(--color-surface);
+  color: var(--color-muted-text);
+  font-size: 0.875rem;
+}
+
+footer p {
+  margin: 0;
+}
+
+@media (max-width: 600px) {
+  .card {
+    padding: var(--spacing-md);
+  }
+
+  .facts {
+    grid-template-columns: 1fr;
+  }
+
+  .facts dd {
+    margin-bottom: var(--spacing-sm);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+    animation: none !important;
+  }
+}

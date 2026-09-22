@@ -1,0 +1,15 @@
+# Course staff cards on the home page. Leave url/email empty if not used.
+# img is relative to the site root; alt text is generated from the name.
+- name: "Judy Hoffman"
+  role: "Instructor"
+  img: "assets/images/instructor.jpg"
+  url: "https://jhoffman.github.io/"
+  office_hours: "TODO"
+  location: "TODO"
+
+- name: "TODO: TA name"
+  role: "Teaching Assistant"
+  img: "assets/images/person.png"
+  url: ""
+  office_hours: "TODO"
+  location: "TODO"

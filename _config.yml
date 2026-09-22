@@ -1,0 +1,30 @@
+# Course details used throughout the site
+course_code: "CS 117"
+course_name: "Project in Computer Vision"
+term: "Fall 2026"
+university: "UC Irvine"
+title: "CS 117 Fall 2026"
+description: "CS 117: Project in Computer Vision, UC Irvine, Fall 2026."
+
+lecture_days: "Mon/Wed"
+lecture_time: "TODO"
+lecture_location: "TODO"
+
+# Leave a link empty ("") until it exists; the site shows "coming soon" instead
+ed_discussion: ""
+canvas: ""
+gradescope: ""
+slides: ""
+staff_email: ""
+
+# Site is served at https://jhoffman.github.io/cs117-fa26/
+url: "https://jhoffman.github.io"
+baseurl: "/cs117-fa26"
+timezone: America/Los_Angeles
+permalink: pretty
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor

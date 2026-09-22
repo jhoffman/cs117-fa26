@@ -1,0 +1,55 @@
+---
+layout: default
+title: "Assignments"
+---
+{% comment %}
+  Built from _data/assignments.yml. An item counts as past from the day after
+  its due date; the deploy workflow rebuilds daily so this stays current.
+{% endcomment %}
+{% assign today = site.time | date: "%Y-%m-%d" %}
+{% assign sorted = site.data.assignments | sort: "due" %}
+{% assign upcoming = "" | split: "" %}
+{% assign past = "" | split: "" %}
+{% for a in sorted %}
+  {% assign d = a.due | date: "%Y-%m-%d" %}
+  {% if d >= today %}{% assign upcoming = upcoming | push: a %}{% else %}{% assign past = past | push: a %}{% endif %}
+{% endfor %}
+
+<p>Problem sets and project deliverables are submitted on Gradescope unless the handout says otherwise. Deadlines are Pacific time. See the <a href="{{ '/syllabus/' | relative_url }}#late-policy">late policy</a>, and the <a href="{{ '/project/' | relative_url }}">Project page</a> for details on each project milestone.</p>
+
+{% assign groups = "upcoming|Upcoming,past|Past" | split: "," %}
+{% for g in groups %}
+  {% assign parts = g | split: "|" %}
+  {% if parts[0] == "upcoming" %}{% assign list = upcoming %}{% else %}{% assign list = past %}{% endif %}
+  {% if parts[0] == "past" and list.size == 0 %}{% continue %}{% endif %}
+<h2 id="{{ parts[0] }}">{{ parts[1] }}</h2>
+{% if list.size == 0 %}
+<p class="muted">Nothing upcoming.</p>
+{% else %}
+<div class="table-scroll" role="region" aria-labelledby="{{ parts[0] }}" tabindex="0">
+  <table class="data-table">
+    <caption class="visually-hidden">{{ parts[1] }} assignments</caption>
+    <thead>
+      <tr>
+        <th scope="col">Assignment</th>
+        <th scope="col">Type</th>
+        <th scope="col">Released</th>
+        <th scope="col">Due</th>
+        <th scope="col">Handout</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for a in list %}
+      <tr>
+        <th scope="row">{{ a.title }}{% if a.notes != "" and a.notes %}<br><span class="muted">{{ a.notes }}</span>{% endif %}</th>
+        <td>{% if a.type == "ps" %}<span class="tag tag-ps">Problem set</span>{% else %}<span class="tag tag-project">Project</span>{% endif %}</td>
+        <td>{% if a.release %}{{ a.release | date: "%a, %b %-d" }}{% else %}<span class="muted">n/a</span>{% endif %}</td>
+        <td>{{ a.due | date: "%a, %b %-d" }}{% if a.due_time %}, {{ a.due_time }}{% endif %}</td>
+        <td>{% if a.link and a.link != "" %}<a href="{{ a.link | relative_url }}">{{ a.title }} handout</a>{% else %}<span class="muted">Not yet released</span>{% endif %}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endif %}
+{% endfor %}

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% if page.url == "/" %}
+  <title>{{ site.course_code }}: {{ site.course_name }} | {{ site.term }}, {{ site.university }}</title>
+  {% else %}
+  <title>{{ page.title }} | {{ site.course_code }} {{ site.term }}</title>
+  {% endif %}
+  <meta name="description" content="{{ page.description | default: site.description }}">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&display=swap">
+
+  <link rel="icon" href="{{ '/favicon.svg' | relative_url }}" type="image/svg+xml">
+
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/header.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/schedule.css' | relative_url }}">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header>
+    <div class="header-bar">
+      <p class="site-title"><a href="{{ '/' | relative_url }}">{{ site.course_code }} <span class="site-term">{{ site.term }} · {{ site.university }}</span></a></p>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="navbar">
+        <span aria-hidden="true">☰</span> Menu
+      </button>
+      {% assign nav = "/|Home,/schedule/|Schedule,/assignments/|Assignments,/project/|Project,/syllabus/|Syllabus,/resources/|Resources,/faqs/|FAQs" | split: "," %}
+      <nav class="navbar" id="navbar" aria-label="Main">
+        <ul class="nav-list">
+          {% for item in nav %}
+            {% assign parts = item | split: "|" %}
+            <li><a href="{{ parts[0] | relative_url }}"{% if page.url == parts[0] %} class="active" aria-current="page"{% endif %}>{{ parts[1] }}</a></li>
+          {% endfor %}
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+    {% if page.url == "/" %}
+    <h1>{{ site.course_code }}: {{ site.course_name }}</h1>
+    <p class="page-subtitle">{{ site.term }} · {{ site.university }}</p>
+    {% else %}
+    <h1>{{ page.title }}</h1>
+    {% endif %}
+    {{ content }}
+  </main>
+
+  <footer>
+    <p>{{ site.course_code }}: {{ site.course_name }}, {{ site.term }} · <a href="https://jhoffman.github.io/">Judy Hoffman</a> · {{ site.university }}</p>
+  </footer>
+
+  <script>
+    (function () {
+      var button = document.querySelector('.nav-toggle');
+      var nav = document.getElementById('navbar');
+
+      function setOpen(open) {
+        nav.classList.toggle('open', open);
+        button.setAttribute('aria-expanded', open);
+      }
+
+      button.addEventListener('click', function () {
+        setOpen(!nav.classList.contains('open'));
+      });
+
+      // Escape closes the mobile menu and returns focus to its button
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && nav.classList.contains('open')) {
+          setOpen(false);
+          button.focus();
+        }
+      });
+    })();
+  </script>
+</body>
+</html>

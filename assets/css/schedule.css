@@ -1,0 +1,131 @@
+/* Schedule, assignment and milestone tables */
+
+/* Wide tables scroll sideways inside this region on small screens. The
+   region is focusable (tabindex="0" in the HTML) so keyboard users can
+   scroll it too. */
+.table-scroll {
+  width: 100%;
+  overflow-x: auto;
+  margin: var(--spacing-md) 0 var(--spacing-lg);
+  border-radius: var(--radius);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.table-scroll:focus-visible {
+  outline: 2px solid var(--color-link);
+  outline-offset: 2px;
+}
+
+.data-table {
+  width: 100%;
+  min-width: 640px;
+  border-collapse: collapse;
+  background: var(--color-bg);
+}
+
+.data-table caption {
+  text-align: left;
+  padding: 0 0 var(--spacing-sm);
+  color: var(--color-muted-text);
+  font-size: 0.9rem;
+}
+
+/* A caption that repeats the h2 above it: kept for screen readers only */
+.visually-hidden,
+.data-table caption.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.data-table th,
+.data-table td {
+  padding: var(--spacing-sm) var(--spacing-md);
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid #e3e7ea;
+}
+
+/* Header row: primary slate, not accent blue (white on accent is 3.3:1) */
+.data-table thead th {
+  background: var(--color-primary);
+  color: #ffffff;
+  font-weight: 600;
+  border-bottom: none;
+}
+
+.data-table tbody tr:hover > * {
+  background: var(--color-surface);
+}
+
+/* Date cells are row headers: read like body text, not like column headers */
+.data-table tbody th[scope="row"] {
+  font-weight: 600;
+  color: var(--color-primary);
+  white-space: nowrap;
+}
+
+/* Week headers: one per <tbody> */
+.data-table .week-row th {
+  background: var(--color-accent-light);
+  color: var(--color-primary);
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.data-table .cancelled > * {
+  background: var(--color-cancel);
+}
+
+.data-table .cancelled:hover > * {
+  background: var(--color-cancel);
+}
+
+.data-table .col-date { width: 8.5rem; }
+.data-table .col-due  { width: 12rem; }
+
+.data-table ul.due-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.data-table ul.due-list li + li {
+  margin-top: var(--spacing-mini);
+}
+
+.data-table .empty {
+  color: var(--color-muted-text);
+  font-style: italic;
+}
+
+/* Phones: fit the width instead of scrolling, so the Assignments column
+   (the one students most need) stays in view */
+@media (max-width: 600px) {
+  .data-table {
+    min-width: 0;
+    font-size: 0.9rem;
+  }
+
+  .data-table th,
+  .data-table td {
+    padding: var(--spacing-sm);
+  }
+
+  .data-table .col-date { width: 5.5rem; }
+  .data-table .col-due  { width: auto; }
+
+  .data-table tbody th[scope="row"] {
+    white-space: normal;
+  }
+
+  .data-table .tag {
+    white-space: normal;
+  }
+}

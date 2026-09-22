@@ -1,0 +1,52 @@
+---
+layout: default
+title: "Home"
+---
+
+<section class="card" aria-labelledby="overview">
+  <h2 id="overview">Overview</h2>
+  <!-- TODO: course description from the syllabus proposal -->
+  <p>TODO: short course description.</p>
+
+  <dl class="facts">
+    <dt>Lecture</dt>
+    <dd>{{ site.lecture_days }}, {{ site.lecture_time }}</dd>
+    <dt>Location</dt>
+    <dd>{{ site.lecture_location }}</dd>
+    <dt>Dates</dt>
+    <dd>Mon, Sep 28 – Wed, Dec 2 (no class Wed, Nov 11)</dd>
+  </dl>
+</section>
+
+<section class="card" aria-labelledby="links">
+  <h2 id="links">Important Links</h2>
+  {% assign links = "ed_discussion|Ed Discussion|Your first stop for questions and announcements.,canvas|Canvas|Grades and course announcements.,gradescope|Gradescope|Submit problem sets and project deliverables.,slides|Lecture slides|Posted before each lecture." | split: "," %}
+  <ul>
+    {% for l in links %}
+      {% assign parts = l | split: "|" %}
+      {% assign href = site[parts[0]] %}
+      <li>
+        {% if href and href != "" %}<a href="{{ href }}">{{ parts[1] }}</a>{% else %}<strong>{{ parts[1] }}</strong> <span class="muted">(link coming soon)</span>{% endif %}:
+        {{ parts[2] }}
+      </li>
+    {% endfor %}
+  </ul>
+</section>
+
+<section class="card" aria-labelledby="staff">
+  <h2 id="staff">Course Staff</h2>
+  {% if site.staff_email and site.staff_email != "" %}
+  <p>For personal matters, email the course staff at <a href="mailto:{{ site.staff_email }}">{{ site.staff_email }}</a>. Everything else goes on Ed Discussion.</p>
+  {% endif %}
+  <ul class="staff-list">
+    {% for person in site.data.staff %}
+    <li class="staff-card">
+      <img src="{{ person.img | relative_url }}" alt="" width="120" height="120">
+      <h3>{% if person.url and person.url != "" %}<a href="{{ person.url }}">{{ person.name }}</a>{% else %}{{ person.name }}{% endif %}</h3>
+      <p class="staff-role">{{ person.role }}</p>
+      {% if person.office_hours %}<p><strong>Office hours:</strong> {{ person.office_hours }}</p>{% endif %}
+      {% if person.location %}<p><strong>Location:</strong> {{ person.location }}</p>{% endif %}
+    </li>
+    {% endfor %}
+  </ul>
+</section>
