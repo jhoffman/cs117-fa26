@@ -14,7 +14,15 @@ This course is a project-based introduction to computer vision: how machines acq
 
 Every assignment asks for evidence, not only an implementation: you will run experiments, read the resulting curves, test methods on data you collect yourself, and defend your choices. The final project applies the same habits to a question of your own choosing.
 
-**Prerequisites:** Linear algebra, probability, and programming experience in Python. TODO: official UCI prerequisite courses.
+**Prerequisites** (minimum grade of C in each course unless noted):
+
+* I&C SCI 6D
+* MATH 3A *or* I&C SCI 6N
+* MATH 2B *or* AP Calculus BC (minimum score of 4)
+* I&C SCI 46
+* One of COMPSCI 112, COMPSCI 116, COMPSCI 171, or COMPSCI 178
+
+In practice you'll rely most on linear algebra, probability, and programming in Python.
 </section>
 
 <section class="card" markdown="1">
