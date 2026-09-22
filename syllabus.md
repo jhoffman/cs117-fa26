@@ -80,7 +80,16 @@ Reports use patterns you will see in every problem set: results on data you coll
 
 Within the final project: proposal 15%, check-in 20%, presentation 20%, and video + code 45%. The project seed and team roster count toward participation. Due dates are on the [Assignments page]({{ '/assignments/' | relative_url }}).
 
-*Grade cutoffs:* TODO.
+**Grade cutoffs** (final percentage, minimum for each grade):
+
+| Letter | Plus (e.g. A+) | Letter (e.g. A) | Minus (e.g. A−) |
+|---|---|---|---|
+| A | 97 | 93 | 90 |
+| B | 87 | 83 | 80 |
+| C | 77 | 73 | 70 |
+| D | 67 | 63 | 60 |
+| F | n/a | below 60 | n/a |
+{: .cutoff-table}
 </section>
 
 <section class="card" markdown="1">
