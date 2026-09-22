@@ -15,9 +15,9 @@ lecture_location: "SH 174"
 grace_days: 2
 
 # Leave a link empty ("") until it exists; the site shows "coming soon" instead
-ed_discussion: ""
-canvas: ""
-gradescope: ""
+ed_discussion: "https://edstem.org/us/courses/101227"
+canvas: "https://canvas.eee.uci.edu/courses/84319"
+gradescope: "https://www.gradescope.com/courses/1347314"
 slides: ""
 staff_email: ""
 
