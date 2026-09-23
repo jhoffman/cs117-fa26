@@ -12,7 +12,7 @@ title: "Schedule"
 
 <p class="note">This schedule is tentative and may change. Changes will be announced on Ed Discussion.</p>
 
-<p>Deadlines are 11:59pm Pacific unless noted. Late work is accepted up to {{ site.grace_days }} days after a deadline unless noted, and nothing is graded after that; see the <a href="{{ '/syllabus/' | relative_url }}#late-policy">late policy</a>.</p>
+<p>All deadlines are 11:59pm Pacific. Submissions are on Canvas and Gradescope; see the <a href="{{ '/syllabus/' | relative_url }}#late-policy">late policy</a>.</p>
 
 <p>Readings: <strong>S</strong> is <cite>Computer Vision: Algorithms and Applications</cite>, 2nd ed., by Richard Szeliski. <strong>FCV</strong> is <cite>Foundations of Computer Vision</cite>, by Torralba, Isola, and Freeman. Both are free online; see <a href="{{ '/resources/' | relative_url }}">Resources</a>.</p>
 
@@ -63,10 +63,8 @@ title: "Schedule"
                   {% assign d = a.due | date: "%Y-%m-%d" %}
                   {% if d >= row.date and d < until %}
                     <li>
-                      <span class="tag tag-due">Due{% if d != row.date %} {{ a.due | date: "%a %-m/%-d" }}{% endif %}{% if a.due_time %}, {{ a.due_time }}{% endif %}</span>
+                      <span class="tag tag-due">Due{% if d != row.date %} {{ a.due | date: "%a %-m/%-d" }}{% endif %}</span>
                       {% if a.link and a.link != "" %}<a href="{{ a.link | relative_url }}">{{ a.title }}</a>{% else %}{{ a.title }}{% endif %}
-                      {% if a.late_until == "none" %}<br><span class="muted">No late submissions</span>
-                      {% elsif a.late_until %}<br><span class="muted">Accepted through {{ a.late_until | date: "%a, %b %-d" }}</span>{% endif %}
                     </li>
                   {% endif %}
                 {% endfor %}

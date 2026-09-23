@@ -95,9 +95,9 @@ The final project breakdown is on the [Project page]({{ '/project/' | relative_u
 <section class="card" markdown="1">
 ## Late Policy {#late-policy}
 
-Every assignment has a **{{ site.grace_days }}-day grace period** after its deadline, unless the assignment says otherwise. Work submitted during the grace period is accepted without penalty, and you don't need to ask. **Nothing is graded after the grace period ends.**
+Every deadline has a **{{ site.grace_days }}-day grace period**. Work submitted during the grace period is accepted without penalty, and you don't need to ask. **Nothing is graded after the grace period ends.** The last accepted time for each assignment is shown in Canvas.
 
-Exceptions are marked next to the deadline on the [Schedule]({{ '/schedule/' | relative_url }}). For example, Problem Set 1 has a longer grace period for students who add the course late. Participation items and in-class presentations have no grace period unless indicated.
+The one exception is the **final project presentation slides**, which have no grace period because you present them in class. Problem Set 1 has a longer grace period for students who add the course late.
 
 The grace period is meant to cover the ordinary surprises of a quarter: illness, travel, interviews, clustered deadlines, computer problems. If a serious illness or emergency lasts beyond it, contact the instructor as soon as you can.
 </section>

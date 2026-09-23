@@ -1,37 +1,30 @@
 # Every deadline in the course, one entry each. These appear as "Due" labels
 # on the Schedule, listed under the last class meeting on or before the due
-# date. The Schedule is the only page that shows due dates.
+# date. The Schedule is the only page that shows due dates. Every deadline
+# is 11:59pm; grace periods and late windows live in Canvas, not here.
 #
 #   type:       ps | project | participation (for your own bookkeeping)
 #   due:        YYYY-MM-DD
-#   due_time:   only when it isn't 11:59pm, e.g. "before class"
-#   late_until: optional. Last day late work is accepted, overriding the
-#               course-wide grace period (grace_days in _config.yml). Use
-#               "none" for deadlines with no late submissions.
 #   link:       handout or Canvas item; the title links to it once set
 
 - title: "Problem Set 1: Images, Filtering, and Color"
   type: ps
   due: 2026-10-09
-  late_until: 2026-10-16
   link: ""
 
 - title: "Project Seed"
   type: participation
   due: 2026-10-11
-  late_until: "none"
   link: ""
 
 - title: "Syllabus Survey"
   type: participation
   due: 2026-10-16
-  late_until: "none"
   link: ""
 
 - title: "Team Roster"
   type: participation
   due: 2026-10-16
-  late_until: "none"
   link: ""
 
 - title: "Problem Set 2: Local Features and Matching"

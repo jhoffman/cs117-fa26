@@ -17,7 +17,7 @@ Plain Jekyll 4 with no theme; styles are ported from the homepage
 
 Keep dates off the other pages: the Project page and the Syllabus link to the Schedule instead of repeating them.
 
-Late work is accepted for `grace_days` (2) days after the due date, set in `_config.yml` and stated once above the Schedule. To give one assignment a different window, set `late_until: YYYY-MM-DD` on it in `assignments.yml`, or `late_until: "none"` for no late work. The exception is shown under that deadline on the Schedule.
+All deadlines are 11:59pm. The late policy (a `grace_days`-day grace period, set in `_config.yml`) is stated only in the Syllabus. The actual late windows are configured in Canvas and Gradescope and are not shown on the site.
 
 ## Local preview
 

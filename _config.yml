@@ -11,7 +11,7 @@ lecture_time: "3:30–4:50pm"
 lecture_location: "SH 174"
 
 # Late work is accepted without penalty for this many days after the due
-# date, unless an assignment sets late_until in _data/assignments.yml.
+# date (stated in the syllabus late policy; the windows themselves are set in Canvas).
 grace_days: 2
 
 # Leave a link empty ("") until it exists; the site shows "coming soon" instead
