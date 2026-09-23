@@ -39,7 +39,7 @@ Upon successful completion of the course, students should be able to:
 <section class="card" markdown="1">
 ## Course Components {#components}
 
-**Lectures** meet in person, {{ site.lecture_days }} {{ site.lecture_time }} in {{ site.lecture_location }}. Two lectures covering background material (Image Formation and Intro to Learning) are delivered as recorded videos, and those two class meetings (Oct 7 and Oct 12) are TA-led project labs. Slides and readings are posted on Canvas.
+**Lectures** meet in person, {{ site.lecture_days }} {{ site.lecture_time }} in {{ site.lecture_location }}. Two lectures covering background material (Image Formation and Intro to Learning) are delivered as recorded videos, and those two class meetings are TA-led project labs. Slides and readings are posted on Canvas.
 
 **Problem sets.** Three problem sets, each released at the lecture that unlocks it:
 
@@ -57,11 +57,11 @@ Each has three graded parts, weighted the same way every time:
 
 Reports use patterns you will see in every problem set: results on data you collect yourself, a written prediction before you run an experiment, a parameter sweep instead of a single number, and a hunt for inputs that break the method. Photos you collect are graded on being present, never on quality or on the accuracy you achieve. If a prediction turns out to be wrong, saying so earns full credit.
 
-**Midterm.** In class on Wed, Nov 4, on paper. It covers material through Nov 2.
+**Midterm.** In class, on paper. It covers the material through the lecture before it. The date is on the [Schedule]({{ '/schedule/' | relative_url }}).
 
-**Final project.** A team project that asks and answers an empirical question using open-source vision models. It runs from the Oct 7 lab to a video due Mon, Dec 7, the course's final-week activity under UCI Senate Regulation A465. See the [Project page]({{ '/project/' | relative_url }}).
+**Final project.** A team project that asks and answers an empirical question using open-source vision models. It runs from the first project lab to a video due in finals week, the course's final-week activity under UCI Senate Regulation A465. See the [Project page]({{ '/project/' | relative_url }}).
 
-**Participation.** Short required items, each available from the start of the quarter: the project seed (due Oct 11), the syllabus survey (due Oct 16), and the team roster (due Oct 16). Engagement in class, in the project labs, and on Ed Discussion also counts.
+**Participation.** Short required items, each available from the start of the quarter: the project seed, the syllabus survey, and the team roster. Engagement in class, in the project labs, and on Ed Discussion also counts.
 </section>
 
 <section class="card" markdown="1">
@@ -78,7 +78,7 @@ Reports use patterns you will see in every problem set: results on data you coll
 | **Total** | **100%** |
 {: .grade-table}
 
-Within the final project: proposal 15%, check-in 20%, presentation 20%, and video + code 45%. The project seed and team roster count toward participation. Due dates are on the [Assignments page]({{ '/assignments/' | relative_url }}).
+The final project breakdown is on the [Project page]({{ '/project/' | relative_url }}). All due dates are on the [Schedule]({{ '/schedule/' | relative_url }}).
 
 **Grade cutoffs** (final percentage, minimum for each grade):
 
@@ -97,7 +97,7 @@ Within the final project: proposal 15%, check-in 20%, presentation 20%, and vide
 
 Every assignment has a **{{ site.grace_days }}-day grace period** after its deadline, unless the assignment says otherwise. Work submitted during the grace period is accepted without penalty, and you don't need to ask. **Nothing is graded after the grace period ends.**
 
-The last accepted day for every assignment is listed on the [Assignments page]({{ '/assignments/' | relative_url }}). Exceptions are stated there too. For example, Problem Set 1 is accepted through Thu, Oct 16, for students who add the course late. Participation items and in-class presentations have no grace period unless indicated.
+Exceptions are marked next to the deadline on the [Schedule]({{ '/schedule/' | relative_url }}). For example, Problem Set 1 has a longer grace period for students who add the course late. Participation items and in-class presentations have no grace period unless indicated.
 
 The grace period is meant to cover the ordinary surprises of a quarter: illness, travel, interviews, clustered deadlines, computer problems. If a serious illness or emergency lasts beyond it, contact the instructor as soon as you can.
 </section>

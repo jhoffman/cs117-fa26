@@ -1,105 +1,61 @@
-# One entry per problem set or project milestone. Drives the Assignments
-# page, the Project page's milestone table, and the "Out"/"Due" labels on
-# the Schedule. Dates are YYYY-MM-DD; items move from Upcoming to Past the
-# day after they are due.
+# Every deadline in the course, one entry each. These appear as "Due" labels
+# on the Schedule, listed under the last class meeting on or before the due
+# date. The Schedule is the only page that shows due dates.
 #
-#   type:   ps | project | participation (participation items have no release
-#           date: they are available from the start of the quarter)
-#   project: true on a participation item that also belongs in the Project
-#           page's milestone table
-#   weight: share of the final project grade (project milestones only)
-#   link:   handout URL (Canvas, Gradescope, or a file in this repo); "" if not released
+#   type:       ps | project | participation (for your own bookkeeping)
+#   due:        YYYY-MM-DD
+#   due_time:   only when it isn't 11:59pm, e.g. "before class"
 #   late_until: optional. Last day late work is accepted, overriding the
-#           course-wide grace period (grace_days in _config.yml). Use "none"
-#           for deadlines with no late submissions, such as in-class work.
+#               course-wide grace period (grace_days in _config.yml). Use
+#               "none" for deadlines with no late submissions.
+#   link:       handout or Canvas item; the title links to it once set
 
 - title: "Problem Set 1: Images, Filtering, and Color"
   type: ps
-  release: 2026-09-30
   due: 2026-10-09
-  due_time: "11:59pm"
   late_until: 2026-10-16
   link: ""
-  notes: "Extended grace period for students who add the course late"
 
 - title: "Project Seed"
   type: participation
-  project: true
   due: 2026-10-11
-  due_time: "11:59pm"
   late_until: "none"
-  weight: "Participation"
   link: ""
-  notes: "From Project Lab 1"
 
 - title: "Syllabus Survey"
   type: participation
   due: 2026-10-16
-  due_time: "11:59pm"
   late_until: "none"
-  weight: "Participation"
   link: ""
-  notes: "On Canvas"
 
 - title: "Team Roster"
   type: participation
-  project: true
   due: 2026-10-16
-  due_time: "11:59pm"
   late_until: "none"
-  weight: "Participation"
   link: ""
-  notes: "Teams of 3–4"
 
 - title: "Problem Set 2: Local Features and Matching"
   type: ps
-  release: 2026-10-14
   due: 2026-10-23
-  due_time: "11:59pm"
   link: ""
-  notes: ""
 
 - title: "Project Proposal"
   type: project
-  release: 2026-10-21
   due: 2026-10-28
-  due_time: "11:59pm"
-  weight: "15%"
   link: ""
-  notes: ""
 
 - title: "Problem Set 3: CNN Recognition"
   type: ps
-  release: 2026-10-26
   due: 2026-11-16
-  due_time: "11:59pm"
   link: ""
-  notes: ""
 
 - title: "Project Check-in"
   type: project
-  release:
   due: 2026-11-18
   due_time: "before class"
-  weight: "20%"
   link: ""
-  notes: "Must include a baseline number"
-
-- title: "Project Presentation"
-  type: project
-  release:
-  due: 2026-11-30
-  due_time: "in class, Nov 30 or Dec 2"
-  late_until: "none"
-  weight: "20%"
-  link: ""
-  notes: ""
 
 - title: "Final Project Video + Code"
   type: project
-  release:
   due: 2026-12-07
-  due_time: "11:59pm"
-  weight: "45%"
   link: ""
-  notes: ""

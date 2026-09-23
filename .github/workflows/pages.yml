@@ -6,9 +6,6 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
-  # Rebuild daily so "upcoming" vs "past" assignments stay current without a push
-  schedule:
-    - cron: "0 8 * * *"
 
 permissions:
   contents: read

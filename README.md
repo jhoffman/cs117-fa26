@@ -8,16 +8,16 @@ Plain Jekyll 4 with no theme; styles are ported from the homepage
 
 | What | Where |
 |---|---|
-| Course name, lecture time/room, Canvas/Ed/Gradescope/slides links, staff email | `_config.yml` (an empty link shows "coming soon") |
-| Lecture topics and readings | `_data/schedule.tsv`, with one row per class meeting and a `subheading` row per week. `type` can be `cancelled` or `finals`. |
-| Problem sets and project milestones | `_data/assignments.yml`. This file feeds the Assignments page, the Project page's milestone table, and the Out/Due labels on the Schedule. Enter each date once, here. |
+| Course name, lecture time/room, Canvas/Ed/Gradescope links, staff email | `_config.yml` (an empty link shows "coming soon") |
+| Lecture topics and readings | `_data/schedule.tsv`, with one row per class meeting and a `subheading` row per week. `type` can be `cancelled`, `exam`, `lab`, `optional` or `finals`. Use `notes` for one-off events. |
+| Every deadline (problem sets, project milestones, participation) | `_data/assignments.yml`. Each one appears as a Due label on the Schedule, which is the only page that shows dates. Set `link` to the Canvas or handout URL and the title becomes a link. |
 | Instructor and TA cards | `_data/staff.yml`, with photos in `assets/images/` |
 | Policies and grading | `syllabus.md` |
 | Project instructions | `project.html` |
 
-Late work is accepted for `grace_days` (2) days after the due date, set in `_config.yml`. The last accepted day is calculated and shown on every assignment. To give one assignment a different window, set `late_until: YYYY-MM-DD` on it in `assignments.yml`; use `late_until: "none"` for in-class work.
+Keep dates off the other pages: the Project page and the Syllabus link to the Schedule instead of repeating them.
 
-An assignment moves from Upcoming to Past once its last accepted day is over. The deploy workflow rebuilds the site every day, so this happens without a push.
+Late work is accepted for `grace_days` (2) days after the due date, set in `_config.yml` and stated once above the Schedule. To give one assignment a different window, set `late_until: YYYY-MM-DD` on it in `assignments.yml`, or `late_until: "none"` for no late work. The exception is shown under that deadline on the Schedule.
 
 ## Local preview
 

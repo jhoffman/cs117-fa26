@@ -29,7 +29,7 @@
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="navbar">
         <span aria-hidden="true">☰</span> Menu
       </button>
-      {% assign nav = "/|Home,/schedule/|Schedule,/assignments/|Assignments,/project/|Project,/syllabus/|Syllabus,/resources/|Resources,/faqs/|FAQs" | split: "," %}
+      {% assign nav = "/|Home,/schedule/|Schedule,/project/|Project,/syllabus/|Syllabus,/resources/|Resources,/faqs/|FAQs" | split: "," %}
       <nav class="navbar" id="navbar" aria-label="Main">
         <ul class="nav-list">
           {% for item in nav %}

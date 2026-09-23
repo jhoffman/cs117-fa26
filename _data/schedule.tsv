@@ -10,7 +10,7 @@ week	date	topic	readings	type	notes
 3	2026-10-14	Local Invariant Features and Matching	S 7.1		
 4		Week 4		subheading	
 4	2026-10-19	Gradient-Based Learning	FCV 10		
-4	2026-10-21	Neural Networks and Backpropagation	S 5.3; FCV 12, 14; <a href='https://cs231n.github.io/optimization-2/'>CS231n backprop notes</a>		
+4	2026-10-21	Neural Networks and Backpropagation	S 5.3; FCV 12, 14; <a href='https://cs231n.github.io/optimization-2/'>CS231n backprop notes</a>		Final project handout and vetted starter repos posted
 5		Week 5		subheading	
 5	2026-10-26	Convolutional Neural Networks + final project directions preview	S 5.4; FCV 24; <a href='https://cs231n.github.io/convolutional-networks/'>CS231n ConvNet notes</a>		
 5	2026-10-28	Transfer Learning and Fine-Tuning	FCV 24, 36.2		

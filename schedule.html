@@ -3,19 +3,18 @@ layout: default
 title: "Schedule"
 ---
 {% comment %}
-  Rows come from _data/schedule.tsv. Each "subheading" row starts a new week
-  (<tbody>). "Out" and "Due" labels come from _data/assignments.yml: an item is
-  listed on the last class meeting on or before its date, so deadlines that
-  fall on a non-class day still show up in the right week.
+  The only page with dates. Rows come from _data/schedule.tsv; each
+  "subheading" row starts a new week (<tbody>). "Due" labels come from
+  _data/assignments.yml: an item is listed on the last class meeting on or
+  before its due date, so deadlines on non-class days show up in the right week.
 {% endcomment %}
 {% assign dated = site.data.schedule | where_exp: "r", "r.date != nil" %}
 
 <p class="note">This schedule is tentative and may change. Changes will be announced on Ed Discussion.</p>
 
+<p>Deadlines are 11:59pm Pacific unless noted. Late work is accepted up to {{ site.grace_days }} days after a deadline unless noted, and nothing is graded after that; see the <a href="{{ '/syllabus/' | relative_url }}#late-policy">late policy</a>.</p>
+
 <p>Readings: <strong>S</strong> is <cite>Computer Vision: Algorithms and Applications</cite>, 2nd ed., by Richard Szeliski. <strong>FCV</strong> is <cite>Foundations of Computer Vision</cite>, by Torralba, Isola, and Freeman. Both are free online; see <a href="{{ '/resources/' | relative_url }}">Resources</a>.</p>
-{% if site.slides and site.slides != "" %}
-<p>Slides are posted before each lecture in the <a href="{{ site.slides }}">slides folder</a>.</p>
-{% endif %}
 
 <div class="table-scroll" role="region" aria-labelledby="schedule-caption" tabindex="0">
   <table class="data-table">
@@ -31,7 +30,7 @@ title: "Schedule"
         <th scope="col">Date</th>
         <th scope="col">Topic</th>
         <th scope="col">Readings</th>
-        <th scope="col">Assignments</th>
+        <th scope="col">Due</th>
       </tr>
     </thead>
     {% assign di = 0 %}
@@ -61,11 +60,15 @@ title: "Schedule"
             <td>
               {% capture items %}
                 {% for a in site.data.assignments %}
-                  {% if a.release %}{% assign r = a.release | date: "%Y-%m-%d" %}
-                    {% if r >= row.date and r < until %}<li><span class="tag tag-out">Out</span> {{ a.title }}</li>{% endif %}
-                  {% endif %}
                   {% assign d = a.due | date: "%Y-%m-%d" %}
-                  {% if d >= row.date and d < until %}<li><span class="tag tag-due">Due{% if d != row.date %} {{ a.due | date: "%a %-m/%-d" }}{% endif %}</span> {{ a.title }}</li>{% endif %}
+                  {% if d >= row.date and d < until %}
+                    <li>
+                      <span class="tag tag-due">Due{% if d != row.date %} {{ a.due | date: "%a %-m/%-d" }}{% endif %}{% if a.due_time %}, {{ a.due_time }}{% endif %}</span>
+                      {% if a.link and a.link != "" %}<a href="{{ a.link | relative_url }}">{{ a.title }}</a>{% else %}{{ a.title }}{% endif %}
+                      {% if a.late_until == "none" %}<br><span class="muted">No late submissions</span>
+                      {% elsif a.late_until %}<br><span class="muted">Accepted through {{ a.late_until | date: "%a, %b %-d" }}</span>{% endif %}
+                    </li>
+                  {% endif %}
                 {% endfor %}
               {% endcapture %}
               {% assign items = items | strip %}

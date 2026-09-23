@@ -2,57 +2,24 @@
 layout: default
 title: "Final Project"
 ---
-{% assign milestones = site.data.assignments | where_exp: "a", "a.type == 'project' or a.project" | sort: "due" %}
-
 <section class="card" aria-labelledby="project-overview">
   <h2 id="project-overview">Overview</h2>
   <p>In teams of 3–4, you will ask an empirical question about a computer vision model and answer it with evidence. You'll start from open-source code, and the course provides no base code: working with a real repository is part of the skill.</p>
   <p>The one rule that shapes everything else: <strong>frame your project as a question with a measurable answer, not as "build X."</strong> "Build a self-driving car" fails. "Does this detector degrade more on night images than on rain images?" can be answered well with 40 photographs. Any topic can host a good question, and one rubric grades the evidence regardless of topic. Proposals phrased as a build will be sent back with one instruction: turn this into a question.</p>
-  <p>The final project counts for 35% of your course grade. It is the course's final-week activity, and there is no final exam.</p>
-</section>
-
-<section class="card" aria-labelledby="milestones">
-  <h2 id="milestones">Milestones</h2>
-  <p>All dates are also on the <a href="{{ '/schedule/' | relative_url }}">Schedule</a> and <a href="{{ '/assignments/' | relative_url }}">Assignments</a> pages. Late work is accepted through the "Accepted until" date and not graded after it.</p>
-  <div class="table-scroll" role="region" aria-label="Milestones table" tabindex="0">
-    <table class="data-table">
-      <caption class="visually-hidden">Project milestones, due dates, and weights</caption>
-      <thead>
-        <tr>
-          <th scope="col">Milestone</th>
-          <th scope="col">Due</th>
-          <th scope="col">Accepted until</th>
-          <th scope="col">Weight</th>
-          <th scope="col">Instructions</th>
-        </tr>
-      </thead>
-      <tbody>
-        {% for m in milestones %}
-        <tr>
-          <th scope="row">{{ m.title }}</th>
-          <td>{{ m.due | date: "%a, %b %-d" }}{% if m.due_time %}, {{ m.due_time }}{% endif %}</td>
-          {% include accepted-until.html item=m %}
-          <td>{% if accepted_until == "none" %}<span class="muted">No late submissions</span>{% else %}{{ accepted_until | date: "%a, %b %-d" }}{% endif %}</td>
-          <td>{{ m.weight }}</td>
-          <td>{% if m.link and m.link != "" %}<a href="{{ m.link | relative_url }}">{{ m.title }} instructions</a>{% else %}<span class="muted">Coming soon</span>{% endif %}</td>
-        </tr>
-        {% endfor %}
-      </tbody>
-    </table>
-  </div>
-  <p class="muted">Percentages are shares of the final project grade. The seed and roster count toward your participation grade instead.</p>
+  <p>The final project counts for 35% of your course grade. It is the course's final-week activity, and there is no final exam. Due dates for every milestone are on the <a href="{{ '/schedule/' | relative_url }}">Schedule</a>.</p>
 </section>
 
 <section class="card" aria-labelledby="phases">
-  <h2 id="phases">What Each Milestone Requires</h2>
+  <h2 id="phases">Milestones</h2>
+  <p>Percentages are shares of the final project grade. The project seed and team roster count toward your participation grade instead.</p>
 
-  <h3>Project Lab 1 and the project seed (Oct 7, seed due Oct 11, participation)</h3>
+  <h3>Project Lab 1 and project seed (participation)</h3>
   <p>In the first lab you'll watch several modern models succeed and fail, predicting what happens before each demo. You leave with a <strong>project seed</strong>: a domain you care about, five images you could get from it, and a prediction of where a model would work and where it would fail.</p>
 
-  <h3>Project Lab 2 and team roster (Oct 12, roster due Oct 16, participation)</h3>
-  <p>Pitch your seed in 60 seconds to rotating small groups, then form teams of 3–4 (the exact size is set in week 1, once enrollment settles). Anyone still without a team on Oct 16 goes on the unmatched list, and the TA places them on teams on Oct 19.</p>
+  <h3>Project Lab 2 and team roster (participation)</h3>
+  <p>Pitch your seed in 60 seconds to rotating small groups, then form teams of 3–4 (the exact size is set in week 1, once enrollment settles). Anyone still without a team when the roster is due goes on the unmatched list, and the TA places them on teams.</p>
 
-  <h3>Proposal (Oct 28)</h3>
+  <h3>Proposal (15%)</h3>
   <p>Keep it to one page:</p>
   <ul>
     <li>The question</li>
@@ -64,13 +31,13 @@ title: "Final Project"
   </ul>
   <p>Include the <strong>smoke test</strong>: the actual console output of the repository's own demo or evaluation running on your setup. Paste the output itself, not a plan to run it. If a repository won't run within a few hours, pick a different one. Learning that in week 5 costs nothing; learning it in week 9 costs the project.</p>
 
-  <h3>Check-in (Nov 18, before class)</h3>
+  <h3>Check-in (20%)</h3>
   <p>Your check-in must include <strong>a baseline number</strong>. A baseline is a simple method with a measured result: random guessing, nearest neighbour, zero-shot CLIP, or the repository's off-the-shelf output. It guarantees you have something to report even if the ambitious part doesn't work. It is also the only way a later result means anything: 87% accuracy is uninterpretable until you know guessing gets 70%. Also include your revised scope and what's blocking you. A team that arrives without a baseline number will have its scope cut down to something achievable. That's a rescue, not a penalty.</p>
 
-  <h3>Presentation (Nov 30 or Dec 2)</h3>
-  <p>The format (full talks, lightning talks, or a mix) will be announced on Nov 9, once enrollment is known.</p>
+  <h3>Presentation (20%)</h3>
+  <p>Presentations are in class during the last week. The format (full talks, lightning talks, or a mix) will be announced once enrollment is known.</p>
 
-  <h3>Video + code (Dec 7)</h3>
+  <h3>Video + code (45%)</h3>
   <p>Submit all of the following:</p>
   <ul>
     <li>A <strong>4–5 minute video</strong> in a fixed order: question, baseline, what you did, result, limitation.</li>
@@ -82,7 +49,7 @@ title: "Final Project"
 
 <section class="card" aria-labelledby="archetypes">
   <h2 id="archetypes">Six Project Archetypes</h2>
-  <p>Pick one of these shapes. Follow the shape and you will have results by Dec 7. Archetypes 1–5 rely mostly on running existing models rather than training new ones, which is what makes them work on free Colab.</p>
+  <p>Pick one of these shapes. Follow the shape and you will have results by the end of the quarter. Archetypes 1–5 rely mostly on running existing models rather than training new ones, which is what makes them work on free Colab.</p>
   <div class="table-scroll" role="region" aria-label="Project archetypes table" tabindex="0">
     <table class="data-table">
       <caption class="visually-hidden">Project archetypes, what each produces, and its risk</caption>
@@ -108,7 +75,7 @@ title: "Final Project"
 
 <section class="card" aria-labelledby="repos">
   <h2 id="repos">Choosing a Starting Repository</h2>
-  <p>A vetted list of starting points, each confirmed to install and run on free Colab this quarter, will be posted with the project handout on Oct 21. You may go off the list if your repository meets the same bar:</p>
+  <p>A vetted list of starting points, each confirmed to install and run on free Colab this quarter, will be posted with the project handout. You may go off the list if your repository meets the same bar:</p>
   <ul>
     <li>The README has a working install and a runnable demo or evaluation command.</li>
     <li>It had a commit in the last ~2 years, or it's a maintained library such as <code>torchvision</code>, <code>timm</code>, or Hugging Face.</li>

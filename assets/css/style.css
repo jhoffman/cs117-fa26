@@ -257,14 +257,10 @@ button:focus-visible {
 }
 
 .tag-due    { background-color: var(--color-due); }
-.tag-out    { background-color: var(--color-out); }
 .tag-cancel { background-color: var(--color-bg); }
 .tag-exam   { background-color: var(--color-exam); }
 .tag-lab    { background-color: var(--color-out); }
 .tag-optional { background-color: var(--color-surface-hover); }
-.tag-ps     { background-color: var(--color-surface-hover); }
-.tag-project { background-color: var(--color-accent-light); }
-.tag-participation { background-color: var(--color-due); }
 
 /* Callout: an accent rule, as on the homepage's research statement */
 .note {
