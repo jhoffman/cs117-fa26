@@ -113,7 +113,7 @@ Every problem set report ends with a required **AI-use disclosure**:
 * roughly what you asked them, and
 * **at least one specific thing the tool got wrong or misled you about, and how you caught it.**
 
-The disclosure is not surveillance, and it carries no penalty. It is graded on specificity, because noticing where a confident tool is wrong is the actual professional skill.
+The disclosure is graded on specificity, because noticing where a confident tool is wrong is the actual professional skill.
 
 What you submit must still reflect your own understanding. Your predictions, analyses, and conclusions must be your own. Presenting AI-generated work as your own thinking, or using AI tools without disclosing them, is academic dishonesty.
 </section>
