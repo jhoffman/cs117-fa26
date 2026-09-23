@@ -1,7 +1,7 @@
 week	date	topic	readings	type	notes
 1		Week 1		subheading	
 1	2026-09-28	Introduction	S 1.1–1.3; FCV 1–3		
-1	2026-09-30	Linear Filters	<strong>Before class:</strong> Image Formation slides (Canvas); S 2.2–2.3; FCV 5, 8<br>S 3.2–3.3; FCV 17		
+1	2026-09-30	Linear Filters	<strong>Before class:</strong> Image Formation slides; S 2.2–2.3; FCV 5, 8<br>S 3.2–3.3; FCV 17		
 2		Week 2		subheading	
 2	2026-10-05	Gradients and Edges	S 7.2; FCV 18		
 2	2026-10-07	Project Lab 1: What is out there?		lab	TA-led in class
@@ -9,7 +9,7 @@ week	date	topic	readings	type	notes
 3	2026-10-12	Project Lab 2: Team formation		lab	TA-led in class
 3	2026-10-14	Local Invariant Features and Matching	S 7.1		
 4		Week 4		subheading	
-4	2026-10-19	Gradient-Based Learning	<strong>Before class:</strong> Intro to Learning slides (Canvas); S 5.1; FCV 9<br>FCV 10		
+4	2026-10-19	Gradient-Based Learning	<strong>Before class:</strong> Intro to Learning slides; S 5.1; FCV 9<br>FCV 10		
 4	2026-10-21	Neural Networks and Backpropagation	S 5.3; FCV 12, 14; <a href='https://cs231n.github.io/optimization-2/'>CS231n backprop notes</a>		Final project handout and vetted starter repos posted
 5		Week 5		subheading	
 5	2026-10-26	Convolutional Neural Networks + final project directions preview	S 5.4; FCV 24; <a href='https://cs231n.github.io/convolutional-networks/'>CS231n ConvNet notes</a>		
