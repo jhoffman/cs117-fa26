@@ -61,7 +61,7 @@ Reports use patterns you will see in every problem set: results on data you coll
 
 **Final project.** A team project that asks and answers an empirical question using open-source vision models. It runs from the first project lab to a video due in finals week, the course's final-week activity under UCI Senate Regulation A465. See the [Project page]({{ '/project/' | relative_url }}).
 
-**Participation.** Short required items, each available from the start of the quarter: the project seed, the syllabus survey, and the team roster. Engagement in class, in the project labs, and on Ed Discussion also counts.
+**Participation.** Short required items, each available from the start of the quarter: the project seed and the team roster. Engagement in class, in the project labs, and on Ed Discussion also counts.
 </section>
 
 <section class="card" markdown="1">
