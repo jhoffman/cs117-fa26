@@ -1,7 +1,7 @@
 week	date	topic	readings	type	notes
 1		Week 1		subheading	
 1	2026-09-28	Introduction	S 1.1–1.3; FCV 1–3		
-1	2026-09-30	Linear Filters	<strong>Before class:</strong> Image Formation slides; S 2.2–2.3; FCV 5, 8<br>S 3.2–3.3; FCV 17		
+1	2026-09-30	Linear Filters	<strong>Before class:</strong> Image Formation slides; S 2.2–2.3; FCV 5, 8<br>S 3.2–3.3; FCV 15, 17		
 2		Week 2		subheading	
 2	2026-10-05	Gradients and Edges	S 7.2; FCV 18		
 2	2026-10-07	Project Lab 1: What is out there?		lab	TA-led in class
@@ -13,18 +13,18 @@ week	date	topic	readings	type	notes
 4	2026-10-21	Neural Networks and Backpropagation	S 5.3; FCV 12, 14; <a href='https://cs231n.github.io/optimization-2/'>CS231n backprop notes</a>		Final project handout and vetted starter repos posted
 5		Week 5		subheading	
 5	2026-10-26	Convolutional Neural Networks + final project directions preview	S 5.4; FCV 24; <a href='https://cs231n.github.io/convolutional-networks/'>CS231n ConvNet notes</a>		
-5	2026-10-28	Transfer Learning and Fine-Tuning	FCV 24, 36.2		
+5	2026-10-28	Transfer Learning and Fine-Tuning	FCV 37		
 6		Week 6		subheading	
-6	2026-11-02	Training Deep Networks: Data and Robustness			
+6	2026-11-02	Training Deep Networks: Data and Robustness	FCV 11, 35, 36		
 6	2026-11-04	Midterm Exam (in class, on paper)		exam	
 7		Week 7		subheading	
-7	2026-11-09	Segmentation and Detection			Final project presentation format announced
+7	2026-11-09	Segmentation and Detection	S 6.3–6.4; FCV 50		Final project presentation format announced
 7	2026-11-11	Veterans Day		cancelled	
 8		Week 8		subheading	
-8	2026-11-16	Vision Transformers	FCV 26		
-8	2026-11-18	CLIP and Vision-Language Models + project check-in discussion			
+8	2026-11-16	Vision Transformers	S 5.5.3; FCV 26		
+8	2026-11-18	CLIP and Vision-Language Models + project check-in discussion	S 6.6; FCV 51		
 9		Week 9		subheading	
-9	2026-11-23	Generative Models	FCV 32		
+9	2026-11-23	Generative Models	S 5.5.4; FCV 32–34		
 9	2026-11-25	Optional virtual office hours: project discussion		optional	Thanksgiving week. Nothing graded; missing it costs nothing
 10		Week 10		subheading	
 10	2026-11-30	Project Presentations			
