@@ -39,7 +39,7 @@ Upon successful completion of the course, students should be able to:
 <section class="card" markdown="1">
 ## Course Components {#components}
 
-**Lectures** meet in person, {{ site.lecture_days }} {{ site.lecture_time }} in {{ site.lecture_location }}. Two lectures (Image Formation and Intro to Learning) are delivered as recorded videos, and those two class meetings (Oct 7 and Oct 12) are TA-led project labs. Slides and readings are posted on Canvas.
+**Lectures** meet in person, {{ site.lecture_days }} {{ site.lecture_time }} in {{ site.lecture_location }}. Two lectures covering background material (Image Formation and Intro to Learning) are delivered as recorded videos, and those two class meetings (Oct 7 and Oct 12) are TA-led project labs. Slides and readings are posted on Canvas.
 
 **Problem sets.** Three problem sets, each released at the lecture that unlocks it:
 
@@ -97,7 +97,7 @@ Within the final project: proposal 15%, check-in 20%, presentation 20%, and vide
 
 Every assignment has a **{{ site.grace_days }}-day grace period** after its deadline, unless the assignment says otherwise. Work submitted during the grace period is accepted without penalty, and you don't need to ask. **Nothing is graded after the grace period ends.**
 
-The last accepted day for every assignment is listed on the [Assignments page]({{ '/assignments/' | relative_url }}). Exceptions are stated there too. For example, Problem Set 1 is accepted through Thu, Oct 16, for students who add the course late. Participation items and in-class presentations have no grace period.
+The last accepted day for every assignment is listed on the [Assignments page]({{ '/assignments/' | relative_url }}). Exceptions are stated there too. For example, Problem Set 1 is accepted through Thu, Oct 16, for students who add the course late. Participation items and in-class presentations have no grace period unless indicated.
 
 The grace period is meant to cover the ordinary surprises of a quarter: illness, travel, interviews, clustered deadlines, computer problems. If a serious illness or emergency lasts beyond it, contact the instructor as soon as you can.
 </section>
@@ -105,7 +105,7 @@ The grace period is meant to cover the ordinary surprises of a quarter: illness,
 <section class="card" markdown="1">
 ## Use of AI Tools {#ai-tools}
 
-Using AI coding assistants (for example ChatGPT or Claude) is **permitted and expected** in this course. It is part of how this work is done now.
+Using AI coding assistants (for example ChatGPT or Claude) is **permitted** in this course. 
 
 Every problem set report ends with a required **AI-use disclosure**:
 
@@ -156,7 +156,7 @@ Links are on the [Resources page]({{ '/resources/' | relative_url }}).
 **Technology:**
 
 * A laptop that can run Python 3.11. Problem sets 1 and 2 run on the CPU of any laptop.
-* Problem set 3 and most final projects need a GPU. The free tier of Google Colab is enough, and every assignment is sized to run there. Department cluster access is arranged only for final projects that need more.
+* Problem set 3 and most final projects need a GPU. The free tier of Google Colab is enough, and every assignment is sized to run there. Final projects should be selected to match your available compute. If unsure, discuss with the instructional staff.
 * A reliable internet connection.
 </section>
 
