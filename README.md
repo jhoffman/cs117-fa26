@@ -41,5 +41,5 @@ The layout, colours and tables are built to meet AA. When editing:
 - **Link text:** make it descriptive ("PS1 handout", not "here"), and add "(PDF)" to links that point to PDFs.
 - **Status:** never show status with colour alone. Use the `.tag` labels.
 - **Photos:** staff photos use `alt=""` because the name sits right next to them. Any other image needs real alt text.
-- **Linked files:** slides, handouts and PDFs must be accessible too. Export tagged PDFs, and caption lecture videos.
+- **Linked files:** slides, handouts and PDFs must be accessible too. Export tagged PDFs, and caption any videos.
 - **Checking:** before the quarter, run an [axe](https://www.deque.com/axe/devtools/) or Lighthouse check on each page.

@@ -39,7 +39,7 @@ Upon successful completion of the course, students should be able to:
 <section class="card" markdown="1">
 ## Course Components {#components}
 
-**Lectures** meet in person, {{ site.lecture_days }} {{ site.lecture_time }} in {{ site.lecture_location }}. Two lectures covering background material (Image Formation and Intro to Learning) are delivered as recorded videos, and those two class meetings are TA-led project labs. Slides and readings are posted on Canvas.
+**Lectures** meet in person, {{ site.lecture_days }} {{ site.lecture_time }} in {{ site.lecture_location }}. Two background topics, Image Formation and Intro to Learning, are not lectured: read their slides before the class listed on the Schedule. Two class meetings are TA-led project labs instead. Slides and readings are posted on Canvas.
 
 **Problem sets.** Three problem sets, each released at the lecture that unlocks it:
 
