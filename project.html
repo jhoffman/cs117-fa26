@@ -4,14 +4,14 @@ title: "Final Project"
 ---
 <section class="card" aria-labelledby="project-overview">
   <h2 id="project-overview">Overview</h2>
-  <p>In teams of 3–4, you will ask an empirical question about a computer vision model and answer it with evidence. You'll start from open-source code, and the course provides no base code: working with a real repository is part of the skill.</p>
-  <p>The one rule that shapes everything else: <strong>frame your project as a question with a measurable answer, not as "build X."</strong> "Build a self-driving car" fails. "Does this detector degrade more on night images than on rain images?" can be answered well with 40 photographs. Any topic can host a good question, and one rubric grades the evidence regardless of topic. Proposals phrased as a build will be sent back with one instruction: turn this into a question.</p>
+  <p>In teams of 3–4, you will ask an empirical question about a computer vision model and answer it with evidence. You'll start from open-source code,  working with a real repository is part of the skill.</p>
+  <p>Your project should focus on asking and answering a measurable question, rather than on building an application. For example, if interested in self-driving cars, you won't set up a problem of "Build a self-driving car", but instead ask whether a detector may fail more on nighttime or rain images. Proposals phrased as a build will be guided towards design of a question.</p>
   <p>The final project counts for 35% of your course grade. It is the course's final-week activity, and there is no final exam. Due dates for every milestone are on the <a href="{{ '/schedule/' | relative_url }}">Schedule</a>.</p>
 </section>
 
 <section class="card" aria-labelledby="phases">
   <h2 id="phases">Milestones</h2>
-  <p>Percentages are shares of the final project grade. The project seed and team roster count toward your participation grade instead.</p>
+  <p>Percentages are shares of the final project grade, which will be calculated per team. The project seed and team roster sign-up are conducted individually and count toward your participation grade.</p>
 
   <h3>Project Lab 1 and project seed (participation)</h3>
   <p>In the first lab you'll watch several modern models succeed and fail, predicting what happens before each demo. You leave with a <strong>project seed</strong>: a domain you care about, five images you could get from it, and a prediction of where a model would work and where it would fail.</p>
@@ -20,7 +20,7 @@ title: "Final Project"
   <p>Pitch your seed in 60 seconds to rotating small groups, then form teams of 3–4 (the exact size is set in week 1, once enrollment settles). Anyone still without a team when the roster is due goes on the unmatched list, and the TA places them on teams.</p>
 
   <h3>Proposal (15%)</h3>
-  <p>Keep it to one page:</p>
+  <p>You will be given a template that asks you to answer questions such as:</p>
   <ul>
     <li>The question</li>
     <li>Your archetype (below)</li>
@@ -29,18 +29,18 @@ title: "Final Project"
     <li>A baseline plan</li>
     <li>A fallback, if you chose archetype 6</li>
   </ul>
-  <p>Include the <strong>smoke test</strong>: the actual console output of the repository's own demo or evaluation running on your setup. Paste the output itself, not a plan to run it. If a repository won't run within a few hours, pick a different one. Learning that in week 5 costs nothing; learning it in week 9 costs the project.</p>
 
   <h3>Check-in (20%)</h3>
-  <p>Your check-in must include <strong>a baseline number</strong>. A baseline is a simple method with a measured result: random guessing, nearest neighbour, zero-shot CLIP, or the repository's off-the-shelf output. It guarantees you have something to report even if the ambitious part doesn't work. It is also the only way a later result means anything: 87% accuracy is uninterpretable until you know guessing gets 70%. Also include your revised scope and what's blocking you. A team that arrives without a baseline number will have its scope cut down to something achievable. That's a rescue, not a penalty.</p>
+	<p>Check-in will ask each team to answer a series of questions asked in a provided template. As part of your check-in you will be asked to provide a <strong>baseline number</strong>. 
+A baseline is a simple method with a measured result: random guessing, nearest neighbour, zero-shot CLIP, or the repository's off-the-shelf output. It guarantees you have something to report even if the ambitious part doesn't work. It is also the only way a later result means anything: 87% accuracy is uninterpretable until you know guessing gets 70%. You will also include information such as your revised scope and what's blocking you. </p>
 
   <h3>Presentation (20%)</h3>
-  <p>Presentations are in class during the last week. The format (full talks, lightning talks, or a mix) will be announced once enrollment is known.</p>
+  <p>Presentations are in class during the last week. The format (full talks, lightning talks, or a mix) will be announced once enrollment is finalized.</p>
 
   <h3>Video + code (45%)</h3>
   <p>Submit all of the following:</p>
   <ul>
-    <li>A <strong>4–5 minute video</strong> in a fixed order: question, baseline, what you did, result, limitation.</li>
+    <li>A <strong>3 minute video</strong> in a fixed defined order such as: question, baseline, what you did, result, limitation.</li>
     <li>A <strong>GitHub fork</strong> of the repository you started from, submitted as a URL.</li>
     <li>A <strong><code>CONTRIBUTION.md</code></strong> file listing every file your team wrote or changed, with one line on why.</li>
     <li>Your results.</li>
@@ -49,7 +49,7 @@ title: "Final Project"
 
 <section class="card" aria-labelledby="archetypes">
   <h2 id="archetypes">Six Project Archetypes</h2>
-  <p>Pick one of these shapes. Follow the shape and you will have results by the end of the quarter. Archetypes 1–5 rely mostly on running existing models rather than training new ones, which is what makes them work on free Colab.</p>
+  <p>Pick one of these shapes. Follow the shape and you will have results by the end of the quarter. Archetypes 1–5 rely mostly on running existing models rather than training new ones, which is what makes them work on limited compute. </p>
   <div class="table-scroll" role="region" aria-label="Project archetypes table" tabindex="0">
     <table class="data-table">
       <caption class="visually-hidden">Project archetypes, what each produces, and its risk</caption>
@@ -70,7 +70,7 @@ title: "Final Project"
       </tbody>
     </table>
   </div>
-  <p>The course never covers multi-view geometry (homographies, calibration, stereo, structure from motion). You may still propose a project on it, but you'll be learning that material on your own.</p>
+  <p>The course this term does not cover multi-view geometry (homographies, calibration, stereo, structure from motion). You may still propose a project on it, but you'll be learning that material on your own.</p>
 </section>
 
 <section class="card" aria-labelledby="repos">
