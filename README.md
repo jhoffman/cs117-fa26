@@ -9,7 +9,7 @@ Plain Jekyll 4 with no theme; styles are ported from the homepage
 | What | Where |
 |---|---|
 | Course name, lecture time/room, Canvas/Ed/Gradescope links, staff email | `_config.yml` (an empty link shows "coming soon") |
-| Lecture topics and readings | `_data/schedule.tsv`, with one row per class meeting and a `subheading` row per week. `type` can be `cancelled`, `exam`, `lab`, `optional` or `finals`. Use `notes` for one-off events. |
+| Lecture topics and readings | `_data/schedule.tsv`, with one row per class meeting and a `subheading` row per week. `type` can be `cancelled`, `exam`, `lab`, `optional` or `finals`. Use `notes` for one-off events. Safe to edit in Excel: dates can be `2026-09-28` or Excel's `9/28/26`. |
 | Every deadline (problem sets, project milestones, participation) | `_data/assignments.yml`. Each one appears as a Due label on the Schedule, which is the only page that shows dates. Set `link` to the Canvas or handout URL and the title becomes a link. |
 | Instructor and TA cards | `_data/staff.yml`, with photos in `assets/images/` |
 | Policies and grading | `syllabus.md` |

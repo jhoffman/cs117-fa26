@@ -45,9 +45,10 @@ title: "Schedule"
           </tr>
       {% else %}
         {% assign next = di | plus: 1 %}
-        {% if dated[next] %}{% assign until = dated[next].date %}{% else %}{% assign until = "9999-12-31" %}{% endif %}
+        {% if dated[next] %}{% assign next_date = dated[next].date %}{% include iso-date.html date=next_date %}{% assign until = iso_date %}{% else %}{% assign until = "9999-12-31" %}{% endif %}
+        {% include iso-date.html date=row.date %}{% assign row_date = iso_date %}
           <tr{% if row.type %} class="{{ row.type }}"{% endif %}>
-            <th scope="row">{{ row.date | date: "%a, %b %-d" }}</th>
+            <th scope="row">{{ row_date | date: "%a, %b %-d" }}</th>
             <td>
               {% case row.type %}
                 {% when "cancelled" %}<span class="tag tag-cancel">No class</span>
@@ -63,9 +64,9 @@ title: "Schedule"
               {% capture items %}
                 {% for a in site.data.assignments %}
                   {% assign d = a.due | date: "%Y-%m-%d" %}
-                  {% if d >= row.date and d < until %}
+                  {% if d >= row_date and d < until %}
                     <li>
-                      <span class="tag tag-due">Due{% if d != row.date %} {{ a.due | date: "%a %-m/%-d" }}{% endif %}</span>
+                      <span class="tag tag-due">Due{% if d != row_date %} {{ a.due | date: "%a %-m/%-d" }}{% endif %}</span>
                       {% if a.link and a.link != "" %}<a href="{{ a.link | relative_url }}">{{ a.title }}</a>{% else %}{{ a.title }}{% endif %}
                     </li>
                   {% endif %}

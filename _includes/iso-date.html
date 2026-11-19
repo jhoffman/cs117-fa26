@@ -1,0 +1,16 @@
+{%- comment -%}
+  Normalizes a date from _data/schedule.tsv to YYYY-MM-DD and sets `iso_date`.
+  Accepts 2026-09-28 as well as the M/D/YY or M/D/YYYY that Excel writes when
+  the file is saved from Excel, so editing the schedule there doesn't break it.
+{%- endcomment -%}
+{%- assign raw = include.date | strip -%}
+{%- if raw contains "/" -%}
+  {%- assign p = raw | split: "/" -%}
+  {%- assign y = p[2] | strip -%}
+  {%- if y.size == 2 -%}{%- assign y = "20" | append: y -%}{%- endif -%}
+  {%- assign m = p[0] | strip | prepend: "0" | slice: -2, 2 -%}
+  {%- assign d = p[1] | strip | prepend: "0" | slice: -2, 2 -%}
+  {%- assign iso_date = y | append: "-" | append: m | append: "-" | append: d -%}
+{%- else -%}
+  {%- assign iso_date = raw -%}
+{%- endif -%}
